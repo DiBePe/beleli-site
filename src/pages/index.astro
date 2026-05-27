@@ -1,17 +1,49 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Início">
+  <section class="bg-azul text-white py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-terracota font-medium mb-3 uppercase tracking-widest text-sm">Beleli GeoEngenharia</p>
+      <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-3xl mb-6">
+        Engenharia técnica que integra meio ambiente, automação e geoprocessamento.
+      </h1>
+      <p class="text-white/70 text-lg max-w-2xl mb-8">
+        Consultoria de engenharia para indústrias e empreendimentos que precisam de compliance ambiental, segurança do trabalho e capacidade de geoprocessamento — sob o mesmo CNPJ.
+      </p>
+      <a href="/contato" class="inline-block bg-terracota hover:bg-terracota/90 text-white font-medium px-6 py-3 rounded transition-colors">
+        Fale com a gente
+      </a>
+    </div>
+  </section>
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-2xl font-semibold text-azul mb-12">O que fazemos</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <div class="border-t-2 border-terracota pt-6">
+          <h3 class="font-semibold text-lg text-azul mb-3">Compliance Industrial Integrado</h3>
+          <p class="text-cinza text-sm leading-relaxed">
+            Sistemas de gestão integrados (ISO 9001, 14001, 45001), documentação legal de SST e ambiental, monitoramento com IoT e dashboards de indicadores QSMS.
+          </p>
+        </div>
+
+        <div class="border-t-2 border-terracota pt-6">
+          <h3 class="font-semibold text-lg text-azul mb-3">Serviços Geoambientais</h3>
+          <p class="text-cinza text-sm leading-relaxed">
+            Licenciamento ambiental, perícia e auditoria, mapeamento com drone, ortofotos, análise espacial em GIS e estudos de recursos hídricos e outorga.
+          </p>
+        </div>
+
+        <div class="border-t-2 border-terracota pt-6">
+          <h3 class="font-semibold text-lg text-azul mb-3">Monitoramento Ambiental Instrumentado</h3>
+          <p class="text-cinza text-sm leading-relaxed">
+            Redes de sensores IoT para monitoramento contínuo de efluentes, emissões e qualidade da água. Integração com sistemas supervisórios e relatórios automatizados.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

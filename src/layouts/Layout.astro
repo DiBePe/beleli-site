@@ -1,0 +1,55 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Engenharia que integra meio ambiente, automação e geoprocessamento." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} — Beleli GeoEngenharia</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen flex flex-col">
+
+    <header class="bg-azul text-white">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="font-semibold text-lg tracking-wide">
+          Beleli <span class="text-terracota">GeoEngenharia</span>
+        </a>
+        <nav class="flex gap-6 text-sm font-medium">
+          <a href="/" class="hover:text-terracota transition-colors">Início</a>
+          <a href="/servicos" class="hover:text-terracota transition-colors">Serviços</a>
+          <a href="/sobre" class="hover:text-terracota transition-colors">Sobre</a>
+          <a href="/contato" class="hover:text-terracota transition-colors">Contato</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-azul-dark text-white/70 text-sm">
+      <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between gap-4">
+        <div>
+          <p class="font-semibold text-white">Beleli GeoEngenharia</p>
+          <p>Engenharia que integra meio ambiente, automação e geoprocessamento.</p>
+        </div>
+        <div class="text-right">
+          <p>contato@beleligeoengenharia.com.br</p>
+          <p>© {new Date().getFullYear()} Beleli GeoEngenharia</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
