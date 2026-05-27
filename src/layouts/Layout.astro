@@ -13,17 +13,16 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
 const ogImage = `${siteUrl}/og-image.png`;
 const fullTitle = `${title} — Beleli GeoEngenharia`;
 ---
+
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- SEO básico -->
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalUrl} />
-
-    <!-- Open Graph (WhatsApp, LinkedIn, Facebook) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Beleli GeoEngenharia" />
     <meta property="og:title" content={fullTitle} />
@@ -33,24 +32,39 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="pt_BR" />
-
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body class="min-h-screen flex flex-col">
 
-   <header class="bg-azul text-white relative z-50">
+    <header class="bg-azul text-white relative z-50">
       <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="/">
-  <img src="/logo.svg" alt="Beleli GeoEngenharia" class="h-30" />
-</a>
-        <nav class="flex gap-6 text-sm font-medium">
+          <img src="/logo.svg" alt="Beleli GeoEngenharia" class="h-30" />
+        </a>
+
+        <!-- Nav desktop (some on md+) -->
+        <nav class="hidden md:flex gap-6 text-sm font-medium">
+          <a href="/" class="hover:text-terracota transition-colors">Início</a>
+          <a href="/servicos" class="hover:text-terracota transition-colors">Serviços</a>
+          <a href="/sobre" class="hover:text-terracota transition-colors">Sobre</a>
+          <a href="/contato" class="hover:text-terracota transition-colors">Contato</a>
+        </nav>
+
+        <!-- Botão hambúrguer (só no mobile) -->
+        <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
+          <span class="block w-6 h-0.5 bg-white transition-all" id="linha1"></span>
+          <span class="block w-6 h-0.5 bg-white transition-all" id="linha2"></span>
+          <span class="block w-6 h-0.5 bg-white transition-all" id="linha3"></span>
+        </button>
+      </div>
+
+      <!-- Menu mobile (oculto por padrão) -->
+      <div id="menu-mobile" class="hidden md:hidden bg-azul border-t border-white/10">
+        <nav class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
           <a href="/" class="hover:text-terracota transition-colors">Início</a>
           <a href="/servicos" class="hover:text-terracota transition-colors">Serviços</a>
           <a href="/sobre" class="hover:text-terracota transition-colors">Sobre</a>
@@ -78,3 +92,36 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
 
   </body>
 </html>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu-mobile');
+  const linha1 = document.getElementById('linha1');
+  const linha2 = document.getElementById('linha2');
+  const linha3 = document.getElementById('linha3');
+
+  btn?.addEventListener('click', () => {
+    const aberto = menu?.classList.toggle('hidden') === false;
+
+    // Anima o ícone: vira um X quando aberto
+    if (aberto) {
+      linha1?.classList.add('rotate-45', 'translate-y-2');
+      linha2?.classList.add('opacity-0');
+      linha3?.classList.add('-rotate-45', '-translate-y-2');
+    } else {
+      linha1?.classList.remove('rotate-45', 'translate-y-2');
+      linha2?.classList.remove('opacity-0');
+      linha3?.classList.remove('-rotate-45', '-translate-y-2');
+    }
+  });
+
+  // Fecha o menu ao clicar em qualquer link
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      linha1?.classList.remove('rotate-45', 'translate-y-2');
+      linha2?.classList.remove('opacity-0');
+      linha3?.classList.remove('-rotate-45', '-translate-y-2');
+    });
+  });
+</script>
