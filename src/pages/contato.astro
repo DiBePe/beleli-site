@@ -1,0 +1,81 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contato" description="Entre em contato com a Beleli GeoEngenharia.">
+
+  <section class="bg-azul text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Fale conosco</p>
+      <h1 class="text-3xl md:text-4xl font-semibold">Contato</h1>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16">
+
+      <div>
+        <h2 class="text-xl font-semibold text-azul mb-6">Envie uma mensagem</h2>
+        <form class="space-y-5" id="form-contato">
+          <div>
+            <label class="block text-sm font-medium text-azul mb-1" for="nome">Nome *</label>
+            <input type="text" id="nome" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="Seu nome completo" />
+            <p class="text-red-500 text-xs mt-1 hidden" id="erro-nome">Nome é obrigatório.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-azul mb-1" for="email">E-mail *</label>
+            <input type="email" id="email" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="seu@email.com" />
+            <p class="text-red-500 text-xs mt-1 hidden" id="erro-email">E-mail inválido.</p>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-azul mb-1" for="empresa">Empresa / Projeto</label>
+            <input type="text" id="empresa" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="Opcional" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-azul mb-1" for="mensagem">Mensagem *</label>
+            <textarea id="mensagem" rows="4" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors resize-none" placeholder="Descreva o projeto ou a dúvida"></textarea>
+            <p class="text-red-500 text-xs mt-1 hidden" id="erro-mensagem">Mensagem é obrigatória.</p>
+          </div>
+          <button type="submit" class="w-full bg-terracota hover:bg-terracota/90 text-white font-medium py-3 rounded transition-colors text-sm">
+            Enviar mensagem
+          </button>
+          <p id="sucesso" class="text-green-600 text-sm font-medium hidden">✓ Mensagem recebida. Retornaremos em breve.</p>
+        </form>
+      </div>
+
+      <div class="space-y-8">
+        <div>
+          <h2 class="text-xl font-semibold text-azul mb-6">Informações</h2>
+          <div class="space-y-4 text-sm text-cinza">
+            <p><span class="font-medium text-azul block">E-mail</span>contato@beleligeoengenharia.com.br</p>
+            <p><span class="font-medium text-azul block">Localização</span>Ilha Solteira / SP — com atendimento regional</p>
+            <p><span class="font-medium text-azul block">Áreas de atuação</span>Interior de São Paulo — Campinas, SJRP e região</p>
+          </div>
+        </div>
+        <div class="border-t border-gray-100 pt-8">
+          <p class="text-sm text-cinza leading-relaxed">
+            Respondemos consultas técnicas em até 2 dias úteis. Para projetos urgentes, mencione o prazo na mensagem.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const form = document.getElementById('form-contato');
+  form?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const nome = (document.getElementById('nome') as HTMLInputElement).value.trim();
+    const email = (document.getElementById('email') as HTMLInputElement).value.trim();
+    const mensagem = (document.getElementById('mensagem') as HTMLTextAreaElement).value.trim();
+    let ok = true;
+    ['erro-nome','erro-email','erro-mensagem'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
+    if (!nome) { document.getElementById('erro-nome')?.classList.remove('hidden'); ok = false; }
+    if (!email || !email.includes('@')) { document.getElementById('erro-email')?.classList.remove('hidden'); ok = false; }
+    if (!mensagem) { document.getElementById('erro-mensagem')?.classList.remove('hidden'); ok = false; }
+    if (ok) { form.classList.add('hidden'); document.getElementById('sucesso')?.classList.remove('hidden'); }
+  });
+</script>

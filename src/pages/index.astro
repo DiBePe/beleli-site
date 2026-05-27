@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Início">
-  <section class="bg-azul text-white py-24">
+<section class="relative bg-azul text-white py-24 overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-terracota font-medium mb-3 uppercase tracking-widest text-sm">Beleli GeoEngenharia</p>
       <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-3xl mb-6">
@@ -18,7 +18,10 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
   <section class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
+	
+<div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+
+   <div class="relative max-w-6xl mx-auto px-6">
       <h2 class="text-2xl font-semibold text-azul mb-12">O que fazemos</h2>
       <div class="grid md:grid-cols-3 gap-8">
 

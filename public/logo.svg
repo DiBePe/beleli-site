@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 140" role="img" aria-label="Beleli GeoEngenharia versão negativa">
+  <title>Beleli GeoEngenharia (negativa)</title>
+  <rect width="620" height="140" fill="#003D6B"/>
+  <g transform="translate(20, 20)">
+    <line x1="50" y1="6" x2="50" y2="94" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <line x1="12" y1="28" x2="88" y2="72" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <line x1="12" y1="72" x2="88" y2="28" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="50" cy="50" r="10" fill="#B85A2E"/>
+  </g>
+  <text x="150" y="80" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="46" fill="#FFFFFF" font-weight="700" letter-spacing="1">BELELI</text>
+  <text x="153" y="108" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="14" fill="#B5C5D6" font-weight="500" letter-spacing="6">GEOENGENHARIA</text>
+</svg>

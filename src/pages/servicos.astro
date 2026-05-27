@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Serviços" description="Compliance industrial, serviços geoambientais e monitoramento instrumentado.">
+
+  <section class="bg-azul text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">O que fazemos</p>
+      <h1 class="text-3xl md:text-4xl font-semibold">Serviços</h1>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6 space-y-16">
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="text-terracota text-sm font-semibold uppercase tracking-widest">Eixo 1</span>
+          <h2 class="text-2xl font-semibold text-azul mt-2 mb-4">Compliance Industrial Integrado</h2>
+          <p class="text-cinza leading-relaxed mb-4">
+            Implementação e manutenção de Sistemas de Gestão Integrados (ISO 9001, 14001 e 45001), documentação legal de SST e ambiental, e monitoramento de indicadores QSMS com tecnologia.
+          </p>
+          <p class="text-cinza leading-relaxed">
+            Indicado para indústrias de pequeno e médio porte que precisam regularizar ou manter conformidade com exigências ambientais e de segurança do trabalho.
+          </p>
+        </div>
+        <ul class="space-y-3 text-sm text-cinza">
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Sistemas de Gestão Integrados (ISO 9001 / 14001 / 45001)</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> PGR, PCMSO, LTCAT, laudos de insalubridade e periculosidade</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Monitoramento ambiental com sensores e IoT</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Dashboards de indicadores QSMS em tempo real</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Telemetria e alertas automáticos de não-conformidade</li>
+        </ul>
+      </div>
+
+      <hr class="border-gray-100" />
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="text-terracota text-sm font-semibold uppercase tracking-widest">Eixo 2</span>
+          <h2 class="text-2xl font-semibold text-azul mt-2 mb-4">Serviços Geoambientais</h2>
+          <p class="text-cinza leading-relaxed mb-4">
+            Licenciamento ambiental, perícia, mapeamento aéreo com drone e análise espacial em GIS. Integração entre dado de campo, cartografia e base regulatória.
+          </p>
+          <p class="text-cinza leading-relaxed">
+            Inclui sub-linha especializada em recursos hídricos: outorgas, estudos hidrológicos, balanço hídrico e suporte a processos em agências reguladoras (DAEE/SP, ANA).
+          </p>
+        </div>
+        <ul class="space-y-3 text-sm text-cinza">
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Licenciamento ambiental (LP, LI, LO)</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Perícia e auditoria ambiental</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Mapeamento com drone — APPs, supressão vegetal, áreas degradadas</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Ortofotos e análise espacial em QGIS</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Outorga de uso da água e estudos hidrológicos</li>
+        </ul>
+      </div>
+
+      <hr class="border-gray-100" />
+
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="text-terracota text-sm font-semibold uppercase tracking-widest">Eixo 3</span>
+          <h2 class="text-2xl font-semibold text-azul mt-2 mb-4">Monitoramento Ambiental Instrumentado</h2>
+          <p class="text-cinza leading-relaxed mb-4">
+            Projeto e implantação de redes de sensores IoT para monitoramento contínuo de efluentes, emissões atmosféricas, qualidade da água e parâmetros industriais.
+          </p>
+          <p class="text-cinza leading-relaxed">
+            Da especificação do hardware ao relatório regulatório: aquisição de dados, armazenamento, dashboards, alertas e análise com séries temporais.
+          </p>
+        </div>
+        <ul class="space-y-3 text-sm text-cinza">
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Redes de sensores IoT (ESP32, LoRa) para áreas remotas e industriais</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Monitoramento contínuo de efluentes, emissões e qualidade hídrica</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Integração com sistemas SCADA e dashboards web</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Relatórios automáticos para CETESB, DAEE e ANA</li>
+          <li class="flex gap-3"><span class="text-terracota font-bold">—</span> Análise de dados e detecção de anomalias</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="bg-azul/5 py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-semibold text-azul mb-4">Precisa de um orçamento?</h2>
+      <p class="text-cinza mb-8 max-w-xl mx-auto">Descreva o projeto e entraremos em contato para avaliação técnica sem compromisso.</p>
+      <a href="/contato" class="inline-block bg-terracota hover:bg-terracota/90 text-white font-medium px-6 py-3 rounded transition-colors">
+        Solicitar orçamento
+      </a>
+    </div>
+  </section>
+
+</Layout>
