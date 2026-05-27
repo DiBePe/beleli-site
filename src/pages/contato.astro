@@ -19,27 +19,28 @@ import Layout from '../layouts/Layout.astro';
         <form class="space-y-5" id="form-contato">
           <div>
             <label class="block text-sm font-medium text-azul mb-1" for="nome">Nome *</label>
-            <input type="text" id="nome" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="Seu nome completo" />
+            <input type="text" id="nome" name="nome" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="Seu nome completo" />
             <p class="text-red-500 text-xs mt-1 hidden" id="erro-nome">Nome é obrigatório.</p>
           </div>
           <div>
             <label class="block text-sm font-medium text-azul mb-1" for="email">E-mail *</label>
-            <input type="email" id="email" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="seu@email.com" />
+            <input type="email" id="email" name="email" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="seu@email.com" />
             <p class="text-red-500 text-xs mt-1 hidden" id="erro-email">E-mail inválido.</p>
           </div>
           <div>
             <label class="block text-sm font-medium text-azul mb-1" for="empresa">Empresa / Projeto</label>
-            <input type="text" id="empresa" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="Opcional" />
+            <input type="text" id="empresa" name="empresa" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors" placeholder="Opcional" />
           </div>
           <div>
             <label class="block text-sm font-medium text-azul mb-1" for="mensagem">Mensagem *</label>
-            <textarea id="mensagem" rows="4" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors resize-none" placeholder="Descreva o projeto ou a dúvida"></textarea>
+            <textarea id="mensagem" name="mensagem" rows="4" class="w-full border border-gray-200 rounded px-4 py-2.5 text-sm focus:outline-none focus:border-azul transition-colors resize-none" placeholder="Descreva o projeto ou a dúvida"></textarea>
             <p class="text-red-500 text-xs mt-1 hidden" id="erro-mensagem">Mensagem é obrigatória.</p>
           </div>
-          <button type="submit" class="w-full bg-terracota hover:bg-terracota/90 text-white font-medium py-3 rounded transition-colors text-sm">
+          <button type="submit" id="btn-enviar" class="w-full bg-terracota hover:bg-terracota/90 text-white font-medium py-3 rounded transition-colors text-sm">
             Enviar mensagem
           </button>
           <p id="sucesso" class="text-green-600 text-sm font-medium hidden">✓ Mensagem recebida. Retornaremos em breve.</p>
+          <p id="erro-envio" class="text-red-500 text-sm font-medium hidden">Erro ao enviar. Tente novamente ou mande um e-mail direto.</p>
         </form>
       </div>
 
@@ -65,17 +66,52 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-  const form = document.getElementById('form-contato');
-  form?.addEventListener('submit', function(e) {
+  const form = document.getElementById('form-contato') as HTMLFormElement;
+  const btn = document.getElementById('btn-enviar') as HTMLButtonElement;
+
+  form?.addEventListener('submit', async function(e) {
     e.preventDefault();
+
     const nome = (document.getElementById('nome') as HTMLInputElement).value.trim();
     const email = (document.getElementById('email') as HTMLInputElement).value.trim();
     const mensagem = (document.getElementById('mensagem') as HTMLTextAreaElement).value.trim();
+
+    // Esconde mensagens anteriores
+    ['erro-nome','erro-email','erro-mensagem','erro-envio'].forEach(id =>
+      document.getElementById(id)?.classList.add('hidden')
+    );
+
+    // Validação
     let ok = true;
-    ['erro-nome','erro-email','erro-mensagem'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
     if (!nome) { document.getElementById('erro-nome')?.classList.remove('hidden'); ok = false; }
     if (!email || !email.includes('@')) { document.getElementById('erro-email')?.classList.remove('hidden'); ok = false; }
     if (!mensagem) { document.getElementById('erro-mensagem')?.classList.remove('hidden'); ok = false; }
-    if (ok) { form.classList.add('hidden'); document.getElementById('sucesso')?.classList.remove('hidden'); }
+    if (!ok) return;
+
+    // Envio para o Formspree
+    btn.textContent = 'Enviando...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch('https://formspree.io/f/mlgvawlw', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(form),
+      });
+
+      if (response.ok) {
+        form.reset();
+        document.getElementById('sucesso')?.classList.remove('hidden');
+        btn.classList.add('hidden');
+      } else {
+        document.getElementById('erro-envio')?.classList.remove('hidden');
+        btn.textContent = 'Enviar mensagem';
+        btn.disabled = false;
+      }
+    } catch {
+      document.getElementById('erro-envio')?.classList.remove('hidden');
+      btn.textContent = 'Enviar mensagem';
+      btn.disabled = false;
+    }
   });
 </script>
