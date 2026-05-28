@@ -3,14 +3,17 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Início">
-  <section class="relative bg-azul text-white py-24 overflow-hidden">
-    <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+ <section class="relative bg-azul text-white py-24 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/hero.jpg" alt="Vista aérea de área ambiental analisada" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-azul/80"></div>
+    </div>
     <div class="relative max-w-6xl mx-auto px-6">
       <p class="text-terracota font-medium mb-3 uppercase tracking-widest text-sm">Beleli GeoEngenharia</p>
       <h1 class="text-4xl md:text-5xl font-semibold leading-tight max-w-3xl mb-6">
         Engenharia técnica que integra meio ambiente, automação e geoprocessamento.
       </h1>
-      <p class="text-white/70 text-lg max-w-2xl mb-8">
+      <p class="text-white/80 text-lg max-w-2xl mb-8">
         Consultoria de engenharia para indústrias e empreendimentos que precisam de compliance ambiental, segurança do trabalho e capacidade de geoprocessamento — sob o mesmo CNPJ.
       </p>
       <a href="/contato" class="inline-block bg-terracota hover:bg-terracota/90 text-white font-medium px-6 py-3 rounded transition-colors">

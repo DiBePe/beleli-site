@@ -4,8 +4,12 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Sobre" description="Conheça os engenheiros por trás da Beleli GeoEngenharia.">
 
-  <section class="bg-azul text-white py-16">
-    <div class="max-w-6xl mx-auto px-6">
+  <section class="relative bg-azul text-white py-16 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/sobre.jpg" alt="Vista aérea de península com vegetação preservada" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-azul/80"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-6">
       <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">A empresa</p>
       <h1 class="text-3xl md:text-4xl font-semibold">Sobre nós</h1>
     </div>
