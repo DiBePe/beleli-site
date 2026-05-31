@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Estudos Técnicos" description="Demonstração de produção fotogramétrica completa — do voo ao mapa. Caracterização florestal por captura aérea autoral.">
+
+  <!-- 1. HERO -->
+  <section class="relative bg-azul text-white py-16 overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/fotos_aereas_01.jpg" alt="Vista aérea de fragmento florestal" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-azul/60"></div>
+    </div>
+    <div class="relative max-w-6xl mx-auto px-6">
+      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Estudo Técnico</p>
+      <h1 class="text-3xl md:text-4xl font-semibold">[PLACEHOLDER: Título do caso — sugestão: "Caracterização Florestal · Reflorestamento e Mata Nativa"]</h1>
+    </div>
+  </section>
+
+  <!-- 2. DISCLAIMER -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-lg text-cinza leading-relaxed max-w-3xl fade-in-up">
+        [PLACEHOLDER — Disclaimer afirmativo. Sugestão inicial: "Voo piloto interno em fragmento florestal — reflorestamento contíguo a mata nativa com córrego, próximo a loteamento. Executado para validar pipeline fotogramétrico próprio. Os produtos apresentados ilustram a entrega técnica completa que oferecemos em projetos de caracterização florestal, mapeamento aéreo e análise espacial."]
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. CENÁRIO -->
+  <section class="py-16 bg-azul/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Cenário</p>
+      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">[PLACEHOLDER: Título da seção — ex: "Fragmento florestal em borda de loteamento"]</h2>
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div class="space-y-4 text-cinza leading-relaxed fade-in-up">
+          <p>[PLACEHOLDER — Parágrafo 1: Descrição do terreno. Quem escreve: Frente 6. Revisão: Frente 3.]</p>
+          <p>[PLACEHOLDER — Parágrafo 2: Contexto técnico — por que esse cenário foi escolhido para validar o pipeline; o que ele representa em termos de desafio fotogramétrico (cobertura de copas, presença de córrego, transições de uso do solo).]</p>
+        </div>
+        <figure class="fade-in-up">
+          <img src="/fotos_aereas_02.jpg" alt="Vista aérea do fragmento florestal" class="w-full aspect-video object-cover rounded" />
+          <figcaption class="text-xs text-gray-400 mt-2">Captura aérea · DJI Mini 3 · 2026</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CAPTURA -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Captura</p>
+      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Parâmetros de voo</h2>
+      <div class="max-w-3xl fade-in-up">
+        <table class="w-full text-sm">
+          <tbody class="divide-y divide-gray-100">
+            <tr>
+              <td class="py-3 text-cinza font-medium">Aeronave</td>
+              <td class="py-3 text-azul">DJI Mini 3</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-cinza font-medium">Altura AGL</td>
+              <td class="py-3 text-azul">[PLACEHOLDER — m]</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-cinza font-medium">Sobreposição frontal</td>
+              <td class="py-3 text-azul">[PLACEHOLDER — %]</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-cinza font-medium">Sobreposição lateral</td>
+              <td class="py-3 text-azul">[PLACEHOLDER — %]</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-cinza font-medium">GSD</td>
+              <td class="py-3 text-azul">[PLACEHOLDER — cm/pixel]</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-cinza font-medium">Número de fotos</td>
+              <td class="py-3 text-azul">[PLACEHOLDER]</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-cinza font-medium">Duração do voo</td>
+              <td class="py-3 text-azul">[PLACEHOLDER — min]</td>
+            </tr>
+            <tr>
+              <td class="py-3 text-cinza font-medium">Pipeline de processamento</td>
+              <td class="py-3 text-azul">OpenDroneMap (ODM) · CloudCompare · QGIS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PRODUTOS GERADOS -->
+  <section class="py-16 bg-azul/5">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Produtos gerados</p>
+      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Entregáveis técnicos</h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <button class="thumbnail-trigger fade-in-up text-left" data-img="/ortofoto_web.jpg" data-title="Ortofoto" data-desc="[PLACEHOLDER — Descrição técnica da ortofoto]">
+          <img src="/ortofoto_web.jpg" alt="Ortofoto" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+          <p class="text-azul font-semibold text-sm mt-3">Ortofoto</p>
+          <p class="text-xs text-cinza">[PLACEHOLDER — legenda curta]</p>
+        </button>
+
+        <button class="thumbnail-trigger fade-in-up text-left" data-img="/chm_web.png" data-title="CHM Hipsométrico" data-desc="[PLACEHOLDER — Descrição técnica do CHM]">
+          <img src="/chm_web.png" alt="CHM hipsométrico" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+          <p class="text-azul font-semibold text-sm mt-3">CHM · Modelo de altura de copas</p>
+          <p class="text-xs text-cinza">[PLACEHOLDER — legenda curta]</p>
+        </button>
+
+        <button class="thumbnail-trigger fade-in-up text-left" data-img="/area_3d_topo.png" data-title="Nuvem RGB · Vista topo" data-desc="[PLACEHOLDER — Descrição técnica]">
+          <img src="/area_3d_topo.png" alt="Modelo 3D vista topo" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+          <p class="text-azul font-semibold text-sm mt-3">Nuvem 3D · Topo</p>
+          <p class="text-xs text-cinza">[PLACEHOLDER — legenda curta]</p>
+        </button>
+
+        <button class="thumbnail-trigger fade-in-up text-left" data-img="/area_3d_perspectiva.png" data-title="Nuvem RGB · Perspectiva" data-desc="[PLACEHOLDER — Descrição técnica]">
+          <img src="/area_3d_perspectiva.png" alt="Modelo 3D perspectiva" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+          <p class="text-azul font-semibold text-sm mt-3">Nuvem 3D · Perspectiva</p>
+          <p class="text-xs text-cinza">[PLACEHOLDER — legenda curta]</p>
+        </button>
+
+        <button class="thumbnail-trigger fade-in-up text-left" data-img="/area_3d_lateral.png" data-title="Nuvem RGB · Lateral" data-desc="[PLACEHOLDER — Descrição técnica]">
+          <img src="/area_3d_lateral.png" alt="Modelo 3D lateral" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+          <p class="text-azul font-semibold text-sm mt-3">Nuvem 3D · Lateral</p>
+          <p class="text-xs text-cinza">[PLACEHOLDER — legenda curta]</p>
+        </button>
+
+      </div>
+
+      <p class="text-xs text-gray-400 italic mt-8 max-w-3xl">
+        Clique em qualquer imagem para visualizar em tamanho ampliado.
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. LEITURAS POSSÍVEIS -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Leituras possíveis</p>
+      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">O que esses produtos permitem analisar</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+
+        <div class="fade-in-up">
+          <h3 class="text-lg font-semibold text-azul mb-3">Altura de copas (CHM)</h3>
+          <p class="text-cinza text-sm leading-relaxed">
+            [PLACEHOLDER — Frente 6 redige. Frente 3 revisa. Vocabulário esperado: dossel, estrato arbóreo, métrica vertical de biomassa.]
+          </p>
+        </div>
+
+        <div class="fade-in-up">
+          <h3 class="text-lg font-semibold text-azul mb-3">Cobertura de copas</h3>
+          <p class="text-cinza text-sm leading-relaxed">
+            [PLACEHOLDER — Frente 6 redige. Frente 3 revisa. Vocabulário esperado: proxy por brilho/verde, sem multiespectral; densidade de cobertura percentual.]
+          </p>
+        </div>
+
+        <div class="fade-in-up">
+          <h3 class="text-lg font-semibold text-azul mb-3">Densidade arbórea</h3>
+          <p class="text-cinza text-sm leading-relaxed">
+            [PLACEHOLDER — Frente 6 redige. Frente 3 revisa. Vocabulário esperado: contagem individual via 3D, indivíduos/ha.]
+          </p>
+        </div>
+
+        <div class="fade-in-up">
+          <h3 class="text-lg font-semibold text-azul mb-3">Delimitação plantio vs mata nativa</h3>
+          <p class="text-cinza text-sm leading-relaxed">
+            [PLACEHOLDER — Frente 6 redige. Frente 3 revisa. Vocabulário esperado: regularidade estrutural, alinhamento de plantio, transição para remanescente nativo.]
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. CTA -->
+  <section class="bg-azul/5 py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-semibold text-azul mb-4">Precisa de um estudo técnico como esse?</h2>
+      <p class="text-cinza mb-8 max-w-xl mx-auto">Descreva o projeto e entraremos em contato para avaliação técnica sem compromisso.</p>
+      <a href="/contato" class="inline-block bg-terracota hover:bg-terracota/90 text-white font-medium px-6 py-3 rounded transition-colors">
+        Solicitar avaliação técnica
+      </a>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <dialog id="lightbox" class="bg-transparent backdrop:bg-black/80 p-0 m-auto max-w-[95vw] max-h-[95vh]">
+    <div class="relative">
+      <button id="lightbox-close" class="absolute top-2 right-2 bg-white/90 hover:bg-white text-azul rounded-full w-10 h-10 flex items-center justify-center text-2xl font-bold shadow-lg" aria-label="Fechar">×</button>
+      <img id="lightbox-img" src="" alt="" class="max-w-[95vw] max-h-[85vh] object-contain rounded" />
+      <div class="bg-white p-4 rounded-b">
+        <p id="lightbox-title" class="text-azul font-semibold text-sm"></p>
+        <p id="lightbox-desc" class="text-cinza text-xs mt-1"></p>
+      </div>
+    </div>
+  </dialog>
+
+</Layout>
+
+<script>
+  const lightbox = document.getElementById('lightbox') as HTMLDialogElement;
+  const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+  const lightboxTitle = document.getElementById('lightbox-title');
+  const lightboxDesc = document.getElementById('lightbox-desc');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  document.querySelectorAll<HTMLButtonElement>('.thumbnail-trigger').forEach(btn => {
+    btn.addEventListener('click', () => {
+      lightboxImg.src = btn.dataset.img || '';
+      if (lightboxTitle) lightboxTitle.textContent = btn.dataset.title || '';
+      if (lightboxDesc) lightboxDesc.textContent = btn.dataset.desc || '';
+      lightbox?.showModal();
+    });
+  });
+
+  closeBtn?.addEventListener('click', () => lightbox?.close());
+
+  // Fechar ao clicar no backdrop
+  lightbox?.addEventListener('click', (e) => {
+    if (e.target === lightbox) lightbox.close();
+  });
+</script>
