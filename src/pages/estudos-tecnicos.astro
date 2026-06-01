@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Estudos Técnicos" description="Demonstração de produção fotogramétrica completa — do voo ao mapa. Caracterização florestal por captura aérea autoral.">
+<Layout title="Estudos Técnicos" description="Demonstração de produção fotogramétrica completa — caracterização florestal por captura aérea autoral na região de Ilha Solteira/SP.">
 
   <!-- 1. HERO -->
   <section class="relative bg-azul text-white py-16 overflow-hidden">
@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
     <div class="relative max-w-6xl mx-auto px-6">
       <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Estudo Técnico</p>
-      <h1 class="text-3xl md:text-4xl font-semibold">[PLACEHOLDER: Título do caso — sugestão: "Caracterização Florestal · Reflorestamento e Mata Nativa"]</h1>
+      <h1 class="text-3xl md:text-4xl font-semibold">Caracterização Florestal · Reflorestamento e Mata Nativa</h1>
     </div>
   </section>
 
@@ -29,14 +29,14 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-16 bg-azul/5">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Cenário</p>
-      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">[PLACEHOLDER: Título da seção — ex: "Fragmento florestal em borda de loteamento"]</h2>
+      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Fragmento florestal em borda de loteamento</h2>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div class="space-y-4 text-cinza leading-relaxed fade-in-up">
-          <p>[PLACEHOLDER — Parágrafo 1: Descrição do terreno. Quem escreve: Frente 6. Revisão: Frente 3.]</p>
-          <p>[PLACEHOLDER — Parágrafo 2: Contexto técnico — por que esse cenário foi escolhido para validar o pipeline; o que ele representa em termos de desafio fotogramétrico (cobertura de copas, presença de córrego, transições de uso do solo).]</p>
+          <p>O levantamento cobriu uma área de aproximadamente 7 hectares próxima a Ilha Solteira/SP, na borda de um loteamento em implantação. A cobertura predominante é de plantio jovem em alinhamento característico de compensação ambiental, contíguo a um remanescente de mata nativa que se estende pelas bordas e acompanha um pequeno córrego no interior do polígono. Uma via asfaltada delimita o lado leste — divisa entre a área de compensação e o loteamento. Solo exposto entre as mudas indica plantio em estágio inicial.</p>
+          <p>Esse cenário concentra três condições que costumam exigir bastante de pipelines de fotogrametria: cobertura vegetal densa em parte do polígono (mata nativa nas bordas), feição linear de drenagem (córrego, que altera o relevo no eixo central) e transição abrupta entre usos do solo (plantio, mata, asfalto, solo descoberto). A diversidade de texturas e a geometria irregular do limite tornam o caso útil para validar alinhamento de imagens, qualidade da reconstrução de relevo sob dossel e separação entre superfície (DSM) e terreno (DTM) em áreas com vegetação heterogênea.</p>
         </div>
         <figure class="fade-in-up">
-          <img src="/fotos_aereas_02.jpg" alt="Vista aérea do fragmento florestal" class="w-full aspect-video object-cover rounded" />
+          <img src="/fotos_aereas_02.jpg" alt="Vista de conjunto do fragmento florestal" class="w-full aspect-video object-cover rounded" />
           <figcaption class="text-xs text-gray-400 mt-2">Captura aérea · DJI Mini 3 · 2026</figcaption>
         </figure>
       </div>
@@ -47,7 +47,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Captura</p>
-      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Parâmetros de voo</h2>
+      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Parâmetros de voo e processamento</h2>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div class="fade-in-up">
           <table class="w-full text-sm">
@@ -57,42 +57,62 @@ import Layout from '../layouts/Layout.astro';
                 <td class="py-3 text-azul">DJI Mini 3</td>
               </tr>
               <tr>
-                <td class="py-3 text-cinza font-medium">Altura AGL</td>
-                <td class="py-3 text-azul">[PLACEHOLDER — m]</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Sobreposição frontal</td>
-                <td class="py-3 text-azul">[PLACEHOLDER — %]</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Sobreposição lateral</td>
-                <td class="py-3 text-azul">[PLACEHOLDER — %]</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">GSD</td>
-                <td class="py-3 text-azul">[PLACEHOLDER — cm/pixel]</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Número de fotos</td>
-                <td class="py-3 text-azul">[PLACEHOLDER]</td>
+                <td class="py-3 text-cinza font-medium">Data do voo</td>
+                <td class="py-3 text-azul">29 de maio de 2026</td>
               </tr>
               <tr>
                 <td class="py-3 text-cinza font-medium">Duração do voo</td>
-                <td class="py-3 text-azul">[PLACEHOLDER — min]</td>
+                <td class="py-3 text-azul">~30 min</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">Número de imagens</td>
+                <td class="py-3 text-azul">140</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">Câmeras alinhadas</td>
+                <td class="py-3 text-azul">140 (100%)</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">Altura AGL média</td>
+                <td class="py-3 text-azul">≈100 m</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">Sobreposição frontal</td>
+                <td class="py-3 text-azul">~80%</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">Sobreposição lateral</td>
+                <td class="py-3 text-azul">~70% (estimada)</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">Resolução do sensor</td>
+                <td class="py-3 text-azul">4000 × 2250 px (16:9)</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">GSD efetivo</td>
+                <td class="py-3 text-azul">~2,4 cm/pixel</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">Cobertura horizontal</td>
+                <td class="py-3 text-azul">~7,2 hectares</td>
               </tr>
               <tr>
                 <td class="py-3 text-cinza font-medium">CRS de processamento</td>
                 <td class="py-3 text-azul">UTM 22S (EPSG:32722)</td>
               </tr>
               <tr>
-                <td class="py-3 text-cinza font-medium">Pipeline de processamento</td>
-                <td class="py-3 text-azul">OpenDroneMap (ODM) · CloudCompare · QGIS</td>
+                <td class="py-3 text-cinza font-medium">Pipeline</td>
+                <td class="py-3 text-azul">OpenDroneMap · CloudCompare · QGIS</td>
+              </tr>
+              <tr>
+                <td class="py-3 text-cinza font-medium">Tempo de processamento</td>
+                <td class="py-3 text-azul">~2 horas</td>
               </tr>
             </tbody>
           </table>
         </div>
         <figure class="fade-in-up">
-          <img src="/fotos_aereas_03.jpg" alt="Vista aérea complementar do voo" class="w-full aspect-video object-cover rounded" />
+          <img src="/fotos_aereas_03.jpg" alt="Detalhe do alinhamento de mudas" class="w-full aspect-video object-cover rounded" />
           <figcaption class="text-xs text-gray-400 mt-2">Captura aérea · DJI Mini 3 · 2026</figcaption>
         </figure>
       </div>
@@ -105,43 +125,84 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Produtos gerados</p>
       <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Entregáveis técnicos</h2>
 
-      <!-- Ortofoto + CHM lado a lado -->
-      <div class="grid md:grid-cols-2 gap-6">
+      <!-- 5.1 Grid técnico: 3 cards principais -->
+      <div class="grid md:grid-cols-3 gap-6 items-start">
 
-        <button class="thumbnail-trigger fade-in-up text-left" data-img="/ortofoto_web.jpg" data-title="Ortofoto" data-desc="[PLACEHOLDER — Descrição técnica da ortofoto]">
-          <img src="/ortofoto_web.jpg" alt="Ortofoto" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+        <!-- Card 1: Ortofoto -->
+        <div class="fade-in-up">
+          <button class="thumbnail-trigger w-full text-left" data-img="/ortofoto_web.jpg" data-title="Ortofoto" data-desc="Imagem aérea ortorretificada e georreferenciada em UTM 22S.">
+            <img src="/ortofoto_web.jpg" alt="Ortofoto" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+          </button>
           <p class="text-azul font-semibold text-sm mt-3">Ortofoto</p>
-          <p class="text-xs text-cinza">[PLACEHOLDER — legenda curta]</p>
-        </button>
+          <p class="text-xs text-cinza leading-relaxed mt-1">Imagem aérea ortorretificada e georreferenciada em UTM 22S, com correção das distorções de perspectiva inerentes ao voo. Funciona como base cartográfica para análise espacial, medições de área e localização absoluta de feições do terreno.</p>
+        </div>
 
-        <button class="thumbnail-trigger fade-in-up text-left" data-img="/chm_web.png" data-title="CHM Hipsométrico" data-desc="[PLACEHOLDER — Descrição técnica do CHM]">
-          <img src="/chm_web.png" alt="CHM hipsométrico" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-          <p class="text-azul font-semibold text-sm mt-3">CHM · Modelo de altura de copas</p>
-          <p class="text-xs text-cinza">[PLACEHOLDER — legenda curta]</p>
-        </button>
+        <!-- Card 2: CHM -->
+        <div class="fade-in-up">
+          <button class="thumbnail-trigger w-full text-left" data-img="/chm_web.png" data-title="Modelo de Altura de Copas (CHM)" data-desc="Raster derivado da diferença entre DSM e DTM.">
+            <img src="/chm_web.png" alt="CHM hipsométrico" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+          </button>
+          <p class="text-azul font-semibold text-sm mt-3">Modelo de Altura de Copas (CHM)</p>
+          <p class="text-xs text-cinza leading-relaxed mt-1">Raster derivado da diferença entre o modelo digital de superfície (DSM) e o modelo digital de terreno (DTM). Para cada metro quadrado do polígono, expressa a altura da vegetação acima do solo — métrica direta para caracterizar dossel, comparar com levantamentos anteriores e separar estratos arbóreos.</p>
+        </div>
+
+        <!-- Card 3: Modelo 3D · Nuvem de Pontos Colorizada -->
+        <div class="fade-in-up">
+          <button class="thumbnail-trigger w-full text-left" data-img="/area_3d_perspectiva.png" data-title="Modelo 3D · Perspectiva oblíqua" data-desc="Reconstrução tridimensional por Structure from Motion (SfM) — vista em perspectiva.">
+            <img src="/area_3d_perspectiva.png" alt="Modelo 3D perspectiva" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+          </button>
+          <p class="text-azul font-semibold text-sm mt-3">Modelo 3D · Nuvem de Pontos Colorizada</p>
+          <p class="text-xs text-cinza leading-relaxed mt-1 mb-3">Reconstrução tridimensional gerada por Structure from Motion (SfM) a partir das imagens do voo, com cor real extraída das fotos. Permite visualização tridimensional do terreno e da cobertura vegetal em três ângulos (vista superior, perspectiva oblíqua e perfil lateral), evidenciando relevo, altura do dossel e transições estruturais.</p>
+          <!-- Sub-galeria interna: 2 vistas adicionais -->
+          <div class="grid grid-cols-2 gap-2">
+            <button class="thumbnail-trigger" data-img="/area_3d_topo.png" data-title="Modelo 3D · Vista superior" data-desc="Vista ortogonal superior da nuvem de pontos colorizada.">
+              <img src="/area_3d_topo.png" alt="Modelo 3D topo" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+              <p class="text-xs text-cinza mt-1 text-center">Topo</p>
+            </button>
+            <button class="thumbnail-trigger" data-img="/area_3d_lateral.png" data-title="Modelo 3D · Perfil lateral" data-desc="Perfil lateral da nuvem de pontos colorizada.">
+              <img src="/area_3d_lateral.png" alt="Modelo 3D lateral" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+              <p class="text-xs text-cinza mt-1 text-center">Lateral</p>
+            </button>
+          </div>
+        </div>
 
       </div>
 
-      <!-- Modelo 3D · Três vistas (largura total, sub-grid de 3) -->
-      <div class="mt-8 fade-in-up">
-        <p class="text-azul font-semibold text-sm mb-1">Modelo 3D · Três vistas</p>
-        <p class="text-xs text-cinza mb-4">[PLACEHOLDER — Nuvem RGB renderizada em CloudCompare]</p>
-        <div class="grid md:grid-cols-3 gap-4">
+      <!-- 5.2 Separador + sub-título -->
+      <div class="mt-16 pt-12 border-t border-gray-200">
+        <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Registros visuais</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">Capturas cinemáticas do voo</h3>
 
-          <button class="thumbnail-trigger text-left" data-img="/area_3d_topo.png" data-title="Nuvem RGB · Vista topo" data-desc="[PLACEHOLDER — Descrição técnica]">
-            <img src="/area_3d_topo.png" alt="Modelo 3D vista topo" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-            <p class="text-xs text-cinza mt-2">Topo</p>
-          </button>
+        <!-- 5.3 Galeria visual: 4 fotos em 2x2 -->
+        <div class="grid md:grid-cols-2 gap-6">
 
-          <button class="thumbnail-trigger text-left" data-img="/area_3d_perspectiva.png" data-title="Nuvem RGB · Perspectiva" data-desc="[PLACEHOLDER — Descrição técnica]">
-            <img src="/area_3d_perspectiva.png" alt="Modelo 3D perspectiva" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-            <p class="text-xs text-cinza mt-2">Perspectiva</p>
-          </button>
+          <figure class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_01.jpg" data-title="Transição mata nativa / plantio" data-desc="Transição entre mata nativa e área de plantio recente; via asfaltada do loteamento ao fundo.">
+              <img src="/fotos_aereas_01.jpg" alt="Transição mata nativa e plantio" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+            </button>
+            <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Transição entre mata nativa e área de plantio recente; via asfaltada do loteamento ao fundo.</figcaption>
+          </figure>
 
-          <button class="thumbnail-trigger text-left" data-img="/area_3d_lateral.png" data-title="Nuvem RGB · Lateral" data-desc="[PLACEHOLDER — Descrição técnica]">
-            <img src="/area_3d_lateral.png" alt="Modelo 3D lateral" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-            <p class="text-xs text-cinza mt-2">Lateral</p>
-          </button>
+          <figure class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_02.jpg" data-title="Vista de conjunto" data-desc="Plantio em estágio inicial junto à infraestrutura urbana adjacente.">
+              <img src="/fotos_aereas_02.jpg" alt="Vista de conjunto" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+            </button>
+            <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Vista de conjunto: plantio em estágio inicial junto à infraestrutura urbana adjacente.</figcaption>
+          </figure>
+
+          <figure class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_03.jpg" data-title="Detalhe das mudas em alinhamento" data-desc="Mudas em alinhamento característico de medida compensatória.">
+              <img src="/fotos_aereas_03.jpg" alt="Detalhe das mudas em alinhamento" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+            </button>
+            <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Detalhe técnico das mudas em alinhamento característico de medida compensatória.</figcaption>
+          </figure>
+
+          <figure class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_04.jpg" data-title="Vista ampla do polígono" data-desc="Polígono completo com plantio, mata contígua e arruamento.">
+              <img src="/fotos_aereas_04.jpg" alt="Vista ampla do polígono" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+            </button>
+            <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Vista ampla do polígono com contexto do entorno: plantio, mata contígua e arruamento.</figcaption>
+          </figure>
 
         </div>
       </div>
@@ -163,28 +224,28 @@ import Layout from '../layouts/Layout.astro';
         <div class="fade-in-up">
           <h3 class="text-lg font-semibold text-azul mb-3">Altura de copas (CHM)</h3>
           <p class="text-cinza text-sm leading-relaxed">
-            [PLACEHOLDER — Frente 6 redige. Frente 3 revisa. Vocabulário esperado: dossel, estrato arbóreo, métrica vertical de biomassa.]
+            O CHM expressa, em cada pixel, a métrica vertical entre o terreno e o topo do dossel. Para áreas de compensação ambiental, isso permite comparar com levantamentos anteriores, quando disponíveis, para identificar onde o plantio efetivamente avançou. A leitura também oferece estimativa volumétrica do dossel — proxy útil para priorização de áreas em monitoramento. Não substitui inventário florestal de campo.
           </p>
         </div>
 
         <div class="fade-in-up">
           <h3 class="text-lg font-semibold text-azul mb-3">Cobertura de copas</h3>
           <p class="text-cinza text-sm leading-relaxed">
-            [PLACEHOLDER — Frente 6 redige. Frente 3 revisa. Vocabulário esperado: proxy por brilho/verde, sem multiespectral; densidade de cobertura percentual.]
+            Sem câmera multiespectral, a cobertura de copas é estimada por proxy de brilho/verde sobre a ortofoto e por threshold de altura mínima no CHM (excluindo solo e vegetação rasteira). O resultado é uma densidade percentual de cobertura por polígono — útil para Plano de Recuperação de Áreas Degradadas e Alteradas (PRADA), relatórios de monitoramento e comprovação documental ao órgão licenciador. A limitação espectral é declarada explicitamente nos laudos: o valor é proxy, não índice de vegetação normalizado (NDVI).
           </p>
         </div>
 
         <div class="fade-in-up">
           <h3 class="text-lg font-semibold text-azul mb-3">Densidade arbórea</h3>
           <p class="text-cinza text-sm leading-relaxed">
-            [PLACEHOLDER — Frente 6 redige. Frente 3 revisa. Vocabulário esperado: contagem individual via 3D, indivíduos/ha.]
+            A partir da nuvem de pontos colorizada e do CHM, é possível identificar indivíduos arbóreos por agrupamento local de pontos elevados (algoritmo de detecção de copas por máximos locais). O resultado é uma contagem aproximada de indivíduos por hectare — insumo direto para comprovação do quantitativo plantado em Termos de Ajustamento de Conduta (TAC) ambientais e para auditoria de cumprimento de compromissos de plantio. A precisão da contagem varia com o estágio do plantio: copas individualizadas em adultos são contadas com confiabilidade alta; em mudas jovens com copas sobrepostas, o resultado se aproxima de estimativa.
           </p>
         </div>
 
         <div class="fade-in-up">
-          <h3 class="text-lg font-semibold text-azul mb-3">Delimitação plantio vs mata nativa</h3>
+          <h3 class="text-lg font-semibold text-azul mb-3">Delimitação plantio vs. mata nativa</h3>
           <p class="text-cinza text-sm leading-relaxed">
-            [PLACEHOLDER — Frente 6 redige. Frente 3 revisa. Vocabulário esperado: regularidade estrutural, alinhamento de plantio, transição para remanescente nativo.]
+            A análise combinada da ortofoto (padrão visual de alinhamento) e do CHM (distribuição estatística de alturas) permite separar a porção plantada da porção de remanescente nativo contíguo. O plantio é identificado pela regularidade estrutural — espaçamento entre indivíduos compatível com manejo — e pela altura mais homogênea. A mata nativa contígua é identificada pela heterogeneidade de altura e pela ausência de alinhamento. A delimitação resultante alimenta cadastros como o CAR (Cadastro Ambiental Rural), informa o desenho de Áreas de Preservação Permanente (APP) e dá suporte a relatórios de monitoramento periódico.
           </p>
         </div>
 
@@ -192,12 +253,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 7. FECHAMENTO VISUAL -->
-  <section class="relative h-80 overflow-hidden">
-    <img src="/fotos_aereas_04.jpg" alt="Vista aérea do fragmento florestal" class="w-full h-full object-cover fade-in-up" />
-  </section>
-
-  <!-- 8. CTA -->
+  <!-- 7. CTA -->
   <section class="bg-azul/5 py-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-2xl font-semibold text-azul mb-4">Quer mapeamento aéreo técnico para seu projeto?</h2>
