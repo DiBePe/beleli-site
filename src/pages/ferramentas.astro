@@ -1,0 +1,180 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Ferramentas" description="Calculadoras técnicas úteis para profissionais de engenharia ambiental, agronomia e planejamento territorial.">
+
+  <!-- 1. HERO -->
+  <section class="bg-azul text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Caixa de ferramentas</p>
+      <h1 class="text-3xl md:text-4xl font-semibold">Ferramentas Técnicas</h1>
+    </div>
+  </section>
+
+  <!-- 2. INTRO -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <p class="text-lg text-cinza leading-relaxed max-w-3xl fade-in-up">
+        Calculadoras técnicas úteis para profissionais de engenharia ambiental, agronomia, perícia e planejamento territorial. Mais ferramentas serão adicionadas conforme demanda dos clientes.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. CONVERSOR DE ÁREA -->
+  <section class="py-16 bg-azul/5">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Conversor de área</p>
+      <h2 class="text-2xl font-semibold text-azul mb-3 fade-in-up">Conversão entre unidades de área</h2>
+      <p class="text-cinza text-sm mb-8 fade-in-up">Converte entre metro quadrado, hectare, quilômetro quadrado e os três principais alqueires brasileiros (paulista, mineiro/goiano e baiano).</p>
+
+      <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm fade-in-up">
+        <!-- Origem -->
+        <div class="mb-4">
+          <label for="valor-origem" class="block text-sm font-medium text-azul mb-2">Valor</label>
+          <div class="grid grid-cols-3 gap-3">
+            <input type="number" id="valor-origem" inputmode="decimal" step="any" placeholder="0" class="col-span-2 border border-gray-200 rounded px-4 py-3 text-base focus:outline-none focus:border-azul transition-colors" />
+            <select id="unidade-origem" class="border border-gray-200 rounded px-3 py-3 text-sm focus:outline-none focus:border-azul transition-colors bg-white">
+              <option value="m2">m²</option>
+              <option value="ha" selected>ha</option>
+              <option value="km2">km²</option>
+              <option value="alq_paulista">alq. paulista</option>
+              <option value="alq_mineiro">alq. mineiro/goiano</option>
+              <option value="alq_baiano">alq. baiano</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Botão inverter -->
+        <div class="flex justify-center my-4">
+          <button id="inverter" type="button" class="text-terracota hover:text-azul transition-colors p-2" aria-label="Inverter unidades">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M7 10l5 -5l5 5"/>
+              <path d="M12 5v14"/>
+              <path d="M7 14l5 5l5 -5"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Destino -->
+        <div>
+          <label for="valor-destino" class="block text-sm font-medium text-azul mb-2">Resultado</label>
+          <div class="grid grid-cols-3 gap-3">
+            <input type="text" id="valor-destino" readonly placeholder="0" class="col-span-2 border border-gray-200 rounded px-4 py-3 text-base bg-gray-50 text-azul font-medium" />
+            <select id="unidade-destino" class="border border-gray-200 rounded px-3 py-3 text-sm focus:outline-none focus:border-azul transition-colors bg-white">
+              <option value="m2" selected>m²</option>
+              <option value="ha">ha</option>
+              <option value="km2">km²</option>
+              <option value="alq_paulista">alq. paulista</option>
+              <option value="alq_mineiro">alq. mineiro/goiano</option>
+              <option value="alq_baiano">alq. baiano</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabela de referência -->
+      <div class="mt-12 fade-in-up">
+        <h3 class="text-lg font-semibold text-azul mb-4">Fatores de conversão (em m²)</h3>
+        <div class="bg-white rounded-lg p-6 shadow-sm">
+          <table class="w-full text-sm">
+            <tbody class="divide-y divide-gray-100">
+              <tr>
+                <td class="py-2 text-cinza">1 hectare (ha)</td>
+                <td class="py-2 text-azul text-right">10.000 m²</td>
+              </tr>
+              <tr>
+                <td class="py-2 text-cinza">1 km²</td>
+                <td class="py-2 text-azul text-right">1.000.000 m²</td>
+              </tr>
+              <tr>
+                <td class="py-2 text-cinza">1 alqueire paulista</td>
+                <td class="py-2 text-azul text-right">24.200 m² (2,42 ha)</td>
+              </tr>
+              <tr>
+                <td class="py-2 text-cinza">1 alqueire mineiro / goiano</td>
+                <td class="py-2 text-azul text-right">48.400 m² (4,84 ha)</td>
+              </tr>
+              <tr>
+                <td class="py-2 text-cinza">1 alqueire baiano</td>
+                <td class="py-2 text-azul text-right">96.800 m² (9,68 ha)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-gray-400 italic mt-3">
+          Os alqueires brasileiros variam por região. Confirme com o cliente qual alqueire está em uso antes de relatórios oficiais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. CTA -->
+  <section class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-semibold text-azul mb-4">Precisa de cálculos técnicos específicos?</h2>
+      <p class="text-cinza mb-8 max-w-xl mx-auto">Fale com a gente sobre seu projeto. Atendemos análise espacial, balanço hídrico, dimensionamento e estudos técnicos sob medida.</p>
+      <a href="/contato" class="inline-block bg-terracota hover:bg-terracota/90 text-white font-medium px-6 py-3 rounded transition-colors">
+        Solicitar avaliação técnica
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  // Fatores: 1 unidade = X m²
+  const fatores: Record<string, number> = {
+    'm2': 1,
+    'ha': 10000,
+    'km2': 1000000,
+    'alq_paulista': 24200,
+    'alq_mineiro': 48400,
+    'alq_baiano': 96800,
+  };
+
+  const valorOrigem = document.getElementById('valor-origem') as HTMLInputElement;
+  const valorDestino = document.getElementById('valor-destino') as HTMLInputElement;
+  const unidadeOrigem = document.getElementById('unidade-origem') as HTMLSelectElement;
+  const unidadeDestino = document.getElementById('unidade-destino') as HTMLSelectElement;
+  const btnInverter = document.getElementById('inverter');
+
+  function formatar(valor: number): string {
+    if (!isFinite(valor)) return '';
+    // Casas decimais inteligentes
+    let casas = 4;
+    const abs = Math.abs(valor);
+    if (abs >= 1000) casas = 0;
+    else if (abs >= 100) casas = 1;
+    else if (abs >= 10) casas = 2;
+    else if (abs >= 1) casas = 3;
+    return valor.toLocaleString('pt-BR', {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: casas,
+    });
+  }
+
+  function converter() {
+    const valor = parseFloat(valorOrigem.value);
+    if (isNaN(valor)) {
+      valorDestino.value = '';
+      return;
+    }
+    const m2 = valor * fatores[unidadeOrigem.value];
+    const resultado = m2 / fatores[unidadeDestino.value];
+    valorDestino.value = formatar(resultado);
+  }
+
+  valorOrigem?.addEventListener('input', converter);
+  unidadeOrigem?.addEventListener('change', converter);
+  unidadeDestino?.addEventListener('change', converter);
+
+  btnInverter?.addEventListener('click', () => {
+    // Troca unidades
+    const tmpUnidade = unidadeOrigem.value;
+    unidadeOrigem.value = unidadeDestino.value;
+    unidadeDestino.value = tmpUnidade;
+    // Mantém o valor digitado e recalcula
+    converter();
+  });
+</script>

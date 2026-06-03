@@ -38,6 +38,7 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
     <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
+
   <body class="min-h-screen flex flex-col">
 
     <header class="bg-azul text-white relative z-50">
@@ -46,15 +47,17 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
           <img src="/logo.svg" alt="Beleli GeoEngenharia" class="h-30" />
         </a>
 
-        <!-- Nav desktop (some on md+) -->
-       <nav class="hidden md:flex gap-6 text-sm font-medium">
-  <a href="/" class="hover:text-terracota transition-colors">Início</a>
-  <a href="/servicos" class="hover:text-terracota transition-colors">Serviços</a>
-  <a href="/galeria" class="hover:text-terracota transition-colors">Galeria</a>
-  <a href="/estudos-tecnicos" class="hover:text-terracota transition-colors">Estudos Técnicos</a>
-  <a href="/sobre" class="hover:text-terracota transition-colors">Sobre</a>
-  <a href="/contato" class="hover:text-terracota transition-colors">Contato</a>
-</nav>
+        <!-- Nav desktop -->
+        <nav class="hidden md:flex gap-6 text-sm font-medium">
+          <a href="/" class="hover:text-terracota transition-colors">Início</a>
+          <a href="/servicos" class="hover:text-terracota transition-colors">Serviços</a>
+          <a href="/galeria" class="hover:text-terracota transition-colors">Galeria</a>
+          <a href="/estudos-tecnicos" class="hover:text-terracota transition-colors">Estudos Técnicos</a>
+          <a href="/ferramentas" class="hover:text-terracota transition-colors">Ferramentas</a>
+          <a href="/sobre" class="hover:text-terracota transition-colors">Sobre</a>
+          <a href="/contato" class="hover:text-terracota transition-colors">Contato</a>
+        </nav>
+
         <!-- Botão hambúrguer (só no mobile) -->
         <button id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Abrir menu">
           <span class="block w-6 h-0.5 bg-white transition-all" id="linha1"></span>
@@ -63,16 +66,17 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
         </button>
       </div>
 
-      <!-- Menu mobile (oculto por padrão) -->
+      <!-- Menu mobile -->
       <div id="menu-mobile" class="hidden md:hidden bg-azul border-t border-white/10">
         <nav class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
-  <a href="/" class="hover:text-terracota transition-colors">Início</a>
-  <a href="/servicos" class="hover:text-terracota transition-colors">Serviços</a>
-  <a href="/galeria" class="hover:text-terracota transition-colors">Galeria</a>
-  <a href="/estudos-tecnicos" class="hover:text-terracota transition-colors">Estudos Técnicos</a>
-  <a href="/sobre" class="hover:text-terracota transition-colors">Sobre</a>
-  <a href="/contato" class="hover:text-terracota transition-colors">Contato</a>
-</nav>
+          <a href="/" class="hover:text-terracota transition-colors">Início</a>
+          <a href="/servicos" class="hover:text-terracota transition-colors">Serviços</a>
+          <a href="/galeria" class="hover:text-terracota transition-colors">Galeria</a>
+          <a href="/estudos-tecnicos" class="hover:text-terracota transition-colors">Estudos Técnicos</a>
+          <a href="/ferramentas" class="hover:text-terracota transition-colors">Ferramentas</a>
+          <a href="/sobre" class="hover:text-terracota transition-colors">Sobre</a>
+          <a href="/contato" class="hover:text-terracota transition-colors">Contato</a>
+        </nav>
       </div>
     </header>
 
@@ -86,9 +90,15 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
           <p class="font-semibold text-white">Beleli GeoEngenharia</p>
           <p>Engenharia que integra meio ambiente, automação e geoprocessamento.</p>
         </div>
-       <div class="text-right">
+
+        <div class="text-right">
           <p>
-            <a href="https://wa.me/5518997116392" target="_blank" rel="noopener" class="hover:text-white transition-colors">
+            <a
+              href="https://wa.me/5518997116392"
+              target="_blank"
+              rel="noopener"
+              class="hover:text-white transition-colors"
+            >
               (18) 99711-6392
             </a>
           </p>
@@ -111,7 +121,6 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
   btn?.addEventListener('click', () => {
     const aberto = menu?.classList.toggle('hidden') === false;
 
-    // Anima o ícone: vira um X quando aberto
     if (aberto) {
       linha1?.classList.add('rotate-45', 'translate-y-2');
       linha2?.classList.add('opacity-0');
@@ -123,7 +132,6 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
     }
   });
 
-  // Fecha o menu ao clicar em qualquer link
   menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       menu.classList.add('hidden');
@@ -133,18 +141,18 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
     });
   });
 </script>
+
 <script>
-  // Animação on-scroll com IntersectionObserver
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // anima só uma vez
+        observer.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.1, // dispara quando 10% do elemento aparece
-    rootMargin: '0px 0px -50px 0px' // pequena antecipação
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
   });
 
   document.querySelectorAll('.fade-in-up').forEach((el) => {
