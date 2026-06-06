@@ -1,0 +1,309 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Calculadora de APP" description="Calculadora de Área de Preservação Permanente conforme Lei 12.651/2012 (Código Florestal). Largura mínima para cursos d'água, lagos, nascentes e reservatórios.">
+
+  <!-- HERO com breadcrumb -->
+  <section class="bg-azul text-white py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <nav class="text-sm mb-4">
+        <a href="/ferramentas" class="text-white/70 hover:text-terracota transition-colors">Ferramentas</a>
+        <span class="text-white/50 mx-2">/</span>
+        <span class="text-white/90">Calculadora de APP</span>
+      </nav>
+      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Cálculo técnico</p>
+      <h1 class="text-3xl md:text-4xl font-semibold">Calculadora de APP</h1>
+      <p class="text-white/70 mt-2 text-sm">Área de Preservação Permanente · Lei 12.651/2012</p>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-6">
+      <p class="text-cinza text-base mb-8 fade-in-up">
+        Calculadora de largura mínima de Área de Preservação Permanente (APP) conforme o Código Florestal Brasileiro (Lei 12.651/2012). Selecione o tipo de elemento ambiental, informe os parâmetros aplicáveis e obtenha a faixa mínima exigida em metros, com a referência ao artigo da lei. Para fins formais, sempre validar com engenheiro responsável.
+      </p>
+
+      <!-- CALCULADORA -->
+      <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm border border-gray-100 fade-in-up">
+
+        <!-- BLOCO A: tipo -->
+        <div class="mb-6">
+          <label for="tipo" class="block text-sm font-medium text-azul mb-2">Tipo de elemento ambiental</label>
+          <select id="tipo" class="w-full border border-gray-200 rounded px-4 py-3 text-base focus:outline-none focus:border-azul transition-colors bg-white">
+            <option value="">— selecione —</option>
+            <option value="curso">Curso d'água natural (rio, córrego, riacho)</option>
+            <option value="lago">Lago ou lagoa natural</option>
+            <option value="reservatorio">Reservatório artificial decorrente de barramento</option>
+            <option value="nascente">Nascente ou olho d'água</option>
+            <option value="outros">Outros elementos (encostas, topos, restingas, manguezais, veredas)</option>
+          </select>
+        </div>
+
+        <!-- BLOCO B: inputs dinâmicos -->
+        <div id="inputs-curso" class="hidden mb-6">
+          <label for="largura-curso" class="block text-sm font-medium text-azul mb-2">Largura do leito regular (m)</label>
+          <input type="number" id="largura-curso" inputmode="decimal" step="any" placeholder="ex: 8" class="w-full border border-gray-200 rounded px-4 py-3 text-base focus:outline-none focus:border-azul transition-colors" />
+        </div>
+
+        <div id="inputs-lago" class="hidden mb-6 space-y-4">
+          <div>
+            <label for="area-lago" class="block text-sm font-medium text-azul mb-2">Área do corpo d'água (hectares)</label>
+            <input type="number" id="area-lago" inputmode="decimal" step="any" placeholder="ex: 15" class="w-full border border-gray-200 rounded px-4 py-3 text-base focus:outline-none focus:border-azul transition-colors" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-azul mb-2">Zona</label>
+            <div class="flex gap-4">
+              <label class="flex items-center cursor-pointer">
+                <input type="radio" name="zona-lago" value="rural" class="mr-2 accent-azul" checked />
+                <span class="text-sm text-cinza">Rural</span>
+              </label>
+              <label class="flex items-center cursor-pointer">
+                <input type="radio" name="zona-lago" value="urbana" class="mr-2 accent-azul" />
+                <span class="text-sm text-cinza">Urbana</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div id="inputs-reservatorio" class="hidden mb-6">
+          <label class="block text-sm font-medium text-azul mb-2">Zona</label>
+          <div class="flex gap-4">
+            <label class="flex items-center cursor-pointer">
+              <input type="radio" name="zona-reservatorio" value="rural" class="mr-2 accent-azul" checked />
+              <span class="text-sm text-cinza">Rural</span>
+            </label>
+            <label class="flex items-center cursor-pointer">
+              <input type="radio" name="zona-reservatorio" value="urbana" class="mr-2 accent-azul" />
+              <span class="text-sm text-cinza">Urbana</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- BLOCO C: output -->
+        <div class="pt-6 border-t border-gray-100">
+          <p id="output-msg" class="text-cinza text-sm italic">Selecione o tipo de elemento e informe os parâmetros para visualizar o resultado.</p>
+
+          <div id="output-resultado" class="hidden">
+            <p class="text-sm text-cinza mb-2">APP mínima</p>
+            <p class="text-4xl font-bold text-terracota" id="output-valor"></p>
+            <p class="text-cinza text-sm mt-3" id="output-descricao"></p>
+            <p class="text-xs text-gray-400 mt-3" id="output-fundamento"></p>
+          </div>
+
+          <div id="output-texto" class="hidden">
+            <div id="output-texto-conteudo" class="text-cinza text-sm leading-relaxed space-y-3"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- NOTAS TÉCNICAS -->
+      <div class="mt-8 bg-azul/5 border-l-4 border-terracota rounded p-6 fade-in-up">
+        <p class="font-semibold text-azul mb-3 text-sm uppercase tracking-widest">Importante</p>
+        <ul class="text-cinza text-sm space-y-2 leading-relaxed">
+          <li>— Os valores apresentados seguem a Lei 12.651/2012 (Código Florestal federal).</li>
+          <li>— Estados, municípios ou planos de bacia podem estabelecer faixas mais restritivas.</li>
+          <li>— Áreas rurais consolidadas antes de 22/07/2008 têm regras específicas de recomposição conforme Decreto 7.830/2012.</li>
+          <li>— Para fins formais — licenciamento ambiental, perícia, CAR, supressão vegetal autorizada — sempre validar com engenheiro ambiental responsável.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABELA DE REFERÊNCIA -->
+  <section class="py-16 bg-azul/5">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-xl font-semibold text-azul mb-6 fade-in-up">Tabela completa de referência — Art. 4º da Lei 12.651/2012</h2>
+      <div class="bg-white rounded-lg shadow-sm border border-gray-100 overflow-x-auto fade-in-up">
+        <table class="w-full text-sm">
+          <thead class="bg-azul/5 text-azul">
+            <tr>
+              <th class="text-left p-3 font-semibold">Elemento</th>
+              <th class="text-left p-3 font-semibold">Parâmetro</th>
+              <th class="text-left p-3 font-semibold">Largura mínima de APP</th>
+              <th class="text-left p-3 font-semibold">Artigo</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 text-cinza">
+            <tr><td class="p-3">Curso d'água natural</td><td class="p-3">Largura &lt; 10 m</td><td class="p-3">30 m em cada margem</td><td class="p-3">Art. 4º, I, a</td></tr>
+            <tr><td class="p-3">Curso d'água natural</td><td class="p-3">Largura 10 a 50 m</td><td class="p-3">50 m em cada margem</td><td class="p-3">Art. 4º, I, b</td></tr>
+            <tr><td class="p-3">Curso d'água natural</td><td class="p-3">Largura 50 a 200 m</td><td class="p-3">100 m em cada margem</td><td class="p-3">Art. 4º, I, c</td></tr>
+            <tr><td class="p-3">Curso d'água natural</td><td class="p-3">Largura 200 a 600 m</td><td class="p-3">200 m em cada margem</td><td class="p-3">Art. 4º, I, d</td></tr>
+            <tr><td class="p-3">Curso d'água natural</td><td class="p-3">Largura &gt; 600 m</td><td class="p-3">500 m em cada margem</td><td class="p-3">Art. 4º, I, e</td></tr>
+            <tr><td class="p-3">Lago natural rural</td><td class="p-3">Área ≤ 20 ha</td><td class="p-3">50 m no entorno</td><td class="p-3">Art. 4º, II, a</td></tr>
+            <tr><td class="p-3">Lago natural rural</td><td class="p-3">Área &gt; 20 ha</td><td class="p-3">100 m no entorno</td><td class="p-3">Art. 4º, II, a</td></tr>
+            <tr><td class="p-3">Lago natural urbano</td><td class="p-3">Qualquer área</td><td class="p-3">30 m no entorno</td><td class="p-3">Art. 4º, II, b</td></tr>
+            <tr><td class="p-3">Reservatório artificial</td><td class="p-3">Qualquer zona</td><td class="p-3">Conforme licença ambiental</td><td class="p-3">Art. 4º, III</td></tr>
+            <tr><td class="p-3">Nascente ou olho d'água</td><td class="p-3">Qualquer situação</td><td class="p-3">Raio de 50 m</td><td class="p-3">Art. 4º, IV</td></tr>
+            <tr><td class="p-3">Encosta</td><td class="p-3">Declividade &gt; 45°</td><td class="p-3">Toda a área</td><td class="p-3">Art. 4º, V</td></tr>
+            <tr><td class="p-3">Restinga</td><td class="p-3">Fixadora de dunas / manguezais</td><td class="p-3">Toda a área</td><td class="p-3">Art. 4º, VI</td></tr>
+            <tr><td class="p-3">Manguezal</td><td class="p-3">Toda a extensão</td><td class="p-3">Toda a área</td><td class="p-3">Art. 4º, VII</td></tr>
+            <tr><td class="p-3">Veredas</td><td class="p-3">A partir do espaço brejoso</td><td class="p-3">50 m em projeção horizontal</td><td class="p-3">Art. 4º, XI</td></tr>
+            <tr><td class="p-3">Áreas em altitude</td><td class="p-3">Acima de 1.800 m</td><td class="p-3">Toda a área</td><td class="p-3">Art. 4º, X</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-white py-16">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-2xl font-semibold text-azul mb-4">Precisa de delimitação cartográfica de APP no seu imóvel?</h2>
+      <p class="text-cinza mb-8 max-w-xl mx-auto">A Beleli GeoEngenharia executa levantamento aéreo e delimitação cartográfica de APP integrada ao licenciamento ambiental e ao CAR.</p>
+      <a href="/contato" class="inline-block bg-terracota hover:bg-terracota/90 text-white font-medium px-6 py-3 rounded transition-colors">
+        Solicitar avaliação técnica
+      </a>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  const tipoSelect = document.getElementById('tipo') as HTMLSelectElement;
+  const inputsCurso = document.getElementById('inputs-curso')!;
+  const inputsLago = document.getElementById('inputs-lago')!;
+  const inputsReservatorio = document.getElementById('inputs-reservatorio')!;
+  const larguraCurso = document.getElementById('largura-curso') as HTMLInputElement;
+  const areaLago = document.getElementById('area-lago') as HTMLInputElement;
+
+  const outMsg = document.getElementById('output-msg')!;
+  const outResultado = document.getElementById('output-resultado')!;
+  const outValor = document.getElementById('output-valor')!;
+  const outDescricao = document.getElementById('output-descricao')!;
+  const outFundamento = document.getElementById('output-fundamento')!;
+  const outTexto = document.getElementById('output-texto')!;
+  const outTextoConteudo = document.getElementById('output-texto-conteudo')!;
+
+  function esconderInputs() {
+    inputsCurso.classList.add('hidden');
+    inputsLago.classList.add('hidden');
+    inputsReservatorio.classList.add('hidden');
+  }
+
+  function mostrarMsg(msg: string) {
+    outMsg.classList.remove('hidden');
+    outMsg.textContent = msg;
+    outResultado.classList.add('hidden');
+    outTexto.classList.add('hidden');
+  }
+
+  function mostrarNumerico(valor: number, descricao: string, fundamento: string) {
+    outMsg.classList.add('hidden');
+    outResultado.classList.remove('hidden');
+    outTexto.classList.add('hidden');
+    outValor.textContent = `${valor} m`;
+    outDescricao.textContent = descricao;
+    outFundamento.textContent = fundamento;
+  }
+
+  function mostrarTexto(html: string) {
+    outMsg.classList.add('hidden');
+    outResultado.classList.add('hidden');
+    outTexto.classList.remove('hidden');
+    outTextoConteudo.innerHTML = html;
+  }
+
+  function calcularCurso() {
+    const l = parseFloat(larguraCurso.value);
+    if (isNaN(l)) {
+      mostrarMsg('Informe a largura do curso d\'água para visualizar o resultado.');
+      return;
+    }
+    if (l <= 0) {
+      mostrarMsg('A largura deve ser maior que zero.');
+      return;
+    }
+    let faixa: number, art: string;
+    if (l < 10) { faixa = 30; art = 'a'; }
+    else if (l <= 50) { faixa = 50; art = 'b'; }
+    else if (l <= 200) { faixa = 100; art = 'c'; }
+    else if (l <= 600) { faixa = 200; art = 'd'; }
+    else { faixa = 500; art = 'e'; }
+    mostrarNumerico(faixa, 'em cada margem do curso d\'água.', `Fundamento: Lei 12.651/2012, Art. 4º, inciso I, alínea ${art}.`);
+  }
+
+  function calcularLago() {
+    const a = parseFloat(areaLago.value);
+    const zona = (document.querySelector('input[name="zona-lago"]:checked') as HTMLInputElement)?.value;
+    if (isNaN(a)) {
+      mostrarMsg('Informe a área do corpo d\'água para visualizar o resultado.');
+      return;
+    }
+    if (a <= 0) {
+      mostrarMsg('A área deve ser maior que zero.');
+      return;
+    }
+    if (zona === 'urbana') {
+      mostrarNumerico(30, 'no entorno do lago em zona urbana.', 'Fundamento: Lei 12.651/2012, Art. 4º, inciso II, alínea b.');
+    } else if (a <= 20) {
+      mostrarNumerico(50, 'no entorno do lago em zona rural (área ≤ 20 ha).', 'Fundamento: Lei 12.651/2012, Art. 4º, inciso II, alínea a.');
+    } else {
+      mostrarNumerico(100, 'no entorno do lago em zona rural (área > 20 ha).', 'Fundamento: Lei 12.651/2012, Art. 4º, inciso II, alínea a.');
+    }
+  }
+
+  function mostrarReservatorio() {
+    mostrarTexto(`
+      <p>Para reservatórios artificiais decorrentes de barramento ou represamento de cursos d'água naturais, a faixa de APP é definida na <strong>licença ambiental do empreendimento</strong> (Lei 12.651/2012, Art. 4º, inciso III).</p>
+      <p>Faixas usuais aplicadas em planos ambientais de conservação:</p>
+      <ul class="pl-6 space-y-1 list-disc">
+        <li>Zona rural: tipicamente entre 30 m e 100 m</li>
+        <li>Zona urbana: mínimo 15 m</li>
+      </ul>
+      <p>A faixa exata depende do plano ambiental do reservatório e de eventuais regulamentações estaduais ou municipais mais restritivas. Para licenciamento ou perícia, consulte a licença ambiental específica do empreendimento.</p>
+    `);
+  }
+
+  function mostrarOutros() {
+    mostrarTexto(`
+      <p>Os demais elementos protegidos pelo Art. 4º da Lei 12.651/2012 (encostas com declividade superior a 45°, topo de morros e serras com altura e inclinação mínimas, restingas, manguezais, tabuleiros, veredas, áreas acima de 1.800 m de altitude) exigem <strong>avaliação técnica específica por engenheiro ambiental responsável</strong>.</p>
+      <p>Para esses casos, recomendamos contato direto com a Beleli GeoEngenharia para avaliação técnica.</p>
+      <p><a href="/contato" class="text-terracota hover:underline font-medium">Solicitar avaliação técnica →</a></p>
+    `);
+  }
+
+  function recalcular() {
+    const tipo = tipoSelect.value;
+    esconderInputs();
+
+    if (!tipo) {
+      mostrarMsg('Selecione o tipo de elemento e informe os parâmetros para visualizar o resultado.');
+      return;
+    }
+
+    switch (tipo) {
+      case 'curso':
+        inputsCurso.classList.remove('hidden');
+        calcularCurso();
+        break;
+      case 'lago':
+        inputsLago.classList.remove('hidden');
+        calcularLago();
+        break;
+      case 'reservatorio':
+        inputsReservatorio.classList.remove('hidden');
+        mostrarReservatorio();
+        break;
+      case 'nascente':
+        mostrarNumerico(50, 'de raio em torno da nascente, qualquer que seja a situação topográfica.', 'Fundamento: Lei 12.651/2012, Art. 4º, inciso IV.');
+        break;
+      case 'outros':
+        mostrarOutros();
+        break;
+    }
+  }
+
+  tipoSelect?.addEventListener('change', () => {
+    // Limpa inputs ao trocar tipo
+    larguraCurso.value = '';
+    areaLago.value = '';
+    recalcular();
+  });
+  larguraCurso?.addEventListener('input', recalcular);
+  areaLago?.addEventListener('input', recalcular);
+  document.querySelectorAll('input[name="zona-lago"]').forEach(r => r.addEventListener('change', recalcular));
+  document.querySelectorAll('input[name="zona-reservatorio"]').forEach(r => r.addEventListener('change', recalcular));
+</script>

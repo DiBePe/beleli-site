@@ -1,35 +1,28 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../../layouts/Layout.astro';
 ---
 
-<Layout title="Ferramentas" description="Calculadoras técnicas úteis para profissionais de engenharia ambiental, agronomia e planejamento territorial.">
+<Layout title="Conversor de Área" description="Conversão entre m², hectare, km² e os três alqueires brasileiros (paulista, mineiro/goiano e baiano).">
 
-  <!-- 1. HERO -->
+  <!-- HERO com breadcrumb -->
   <section class="bg-azul text-white py-16">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Caixa de ferramentas</p>
-      <h1 class="text-3xl md:text-4xl font-semibold">Ferramentas Técnicas</h1>
+      <nav class="text-sm mb-4">
+        <a href="/ferramentas" class="text-white/70 hover:text-terracota transition-colors">Ferramentas</a>
+        <span class="text-white/50 mx-2">/</span>
+        <span class="text-white/90">Conversor de Área</span>
+      </nav>
+      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Cálculo técnico</p>
+      <h1 class="text-3xl md:text-4xl font-semibold">Conversor de Área</h1>
     </div>
   </section>
 
-  <!-- 2. INTRO -->
+  <!-- INTRO -->
   <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="text-lg text-cinza leading-relaxed max-w-3xl fade-in-up">
-        Calculadoras técnicas úteis para profissionais de engenharia ambiental, agronomia, perícia e planejamento territorial. Mais ferramentas serão adicionadas conforme demanda dos clientes.
-      </p>
-    </div>
-  </section>
-
-  <!-- 3. CONVERSOR DE ÁREA -->
-  <section class="py-16 bg-azul/5">
     <div class="max-w-3xl mx-auto px-6">
-      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Conversor de área</p>
-      <h2 class="text-2xl font-semibold text-azul mb-3 fade-in-up">Conversão entre unidades de área</h2>
-      <p class="text-cinza text-sm mb-8 fade-in-up">Converte entre metro quadrado, hectare, quilômetro quadrado e os três principais alqueires brasileiros (paulista, mineiro/goiano e baiano).</p>
+      <p class="text-cinza text-base mb-8 fade-in-up">Converte entre metro quadrado, hectare, quilômetro quadrado e os três principais alqueires brasileiros (paulista, mineiro/goiano e baiano).</p>
 
-      <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm fade-in-up">
-        <!-- Origem -->
+      <div class="bg-white rounded-lg p-6 md:p-8 shadow-sm fade-in-up border border-gray-100">
         <div class="mb-4">
           <label for="valor-origem" class="block text-sm font-medium text-azul mb-2">Valor</label>
           <div class="grid grid-cols-3 gap-3">
@@ -45,7 +38,6 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <!-- Botão inverter -->
         <div class="flex justify-center my-4">
           <button id="inverter" type="button" class="text-terracota hover:text-azul transition-colors p-2" aria-label="Inverter unidades">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -56,7 +48,6 @@ import Layout from '../layouts/Layout.astro';
           </button>
         </div>
 
-        <!-- Destino -->
         <div>
           <label for="valor-destino" class="block text-sm font-medium text-azul mb-2">Resultado</label>
           <div class="grid grid-cols-3 gap-3">
@@ -73,32 +64,16 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </div>
 
-      <!-- Tabela de referência -->
       <div class="mt-12 fade-in-up">
         <h3 class="text-lg font-semibold text-azul mb-4">Fatores de conversão (em m²)</h3>
-        <div class="bg-white rounded-lg p-6 shadow-sm">
+        <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-100">
           <table class="w-full text-sm">
             <tbody class="divide-y divide-gray-100">
-              <tr>
-                <td class="py-2 text-cinza">1 hectare (ha)</td>
-                <td class="py-2 text-azul text-right">10.000 m²</td>
-              </tr>
-              <tr>
-                <td class="py-2 text-cinza">1 km²</td>
-                <td class="py-2 text-azul text-right">1.000.000 m²</td>
-              </tr>
-              <tr>
-                <td class="py-2 text-cinza">1 alqueire paulista</td>
-                <td class="py-2 text-azul text-right">24.200 m² (2,42 ha)</td>
-              </tr>
-              <tr>
-                <td class="py-2 text-cinza">1 alqueire mineiro / goiano</td>
-                <td class="py-2 text-azul text-right">48.400 m² (4,84 ha)</td>
-              </tr>
-              <tr>
-                <td class="py-2 text-cinza">1 alqueire baiano</td>
-                <td class="py-2 text-azul text-right">96.800 m² (9,68 ha)</td>
-              </tr>
+              <tr><td class="py-2 text-cinza">1 hectare (ha)</td><td class="py-2 text-azul text-right">10.000 m²</td></tr>
+              <tr><td class="py-2 text-cinza">1 km²</td><td class="py-2 text-azul text-right">1.000.000 m²</td></tr>
+              <tr><td class="py-2 text-cinza">1 alqueire paulista</td><td class="py-2 text-azul text-right">24.200 m² (2,42 ha)</td></tr>
+              <tr><td class="py-2 text-cinza">1 alqueire mineiro / goiano</td><td class="py-2 text-azul text-right">48.400 m² (4,84 ha)</td></tr>
+              <tr><td class="py-2 text-cinza">1 alqueire baiano</td><td class="py-2 text-azul text-right">96.800 m² (9,68 ha)</td></tr>
             </tbody>
           </table>
         </div>
@@ -109,7 +84,6 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- 4. CTA -->
   <section class="bg-white py-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-2xl font-semibold text-azul mb-4">Precisa de cálculos técnicos específicos?</h2>
@@ -123,14 +97,9 @@ import Layout from '../layouts/Layout.astro';
 </Layout>
 
 <script>
-  // Fatores: 1 unidade = X m²
   const fatores: Record<string, number> = {
-    'm2': 1,
-    'ha': 10000,
-    'km2': 1000000,
-    'alq_paulista': 24200,
-    'alq_mineiro': 48400,
-    'alq_baiano': 96800,
+    'm2': 1, 'ha': 10000, 'km2': 1000000,
+    'alq_paulista': 24200, 'alq_mineiro': 48400, 'alq_baiano': 96800,
   };
 
   const valorOrigem = document.getElementById('valor-origem') as HTMLInputElement;
@@ -141,28 +110,20 @@ import Layout from '../layouts/Layout.astro';
 
   function formatar(valor: number): string {
     if (!isFinite(valor)) return '';
-    // Casas decimais inteligentes
     let casas = 4;
     const abs = Math.abs(valor);
     if (abs >= 1000) casas = 0;
     else if (abs >= 100) casas = 1;
     else if (abs >= 10) casas = 2;
     else if (abs >= 1) casas = 3;
-    return valor.toLocaleString('pt-BR', {
-      minimumFractionDigits: 0,
-      maximumFractionDigits: casas,
-    });
+    return valor.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: casas });
   }
 
   function converter() {
     const valor = parseFloat(valorOrigem.value);
-    if (isNaN(valor)) {
-      valorDestino.value = '';
-      return;
-    }
+    if (isNaN(valor)) { valorDestino.value = ''; return; }
     const m2 = valor * fatores[unidadeOrigem.value];
-    const resultado = m2 / fatores[unidadeDestino.value];
-    valorDestino.value = formatar(resultado);
+    valorDestino.value = formatar(m2 / fatores[unidadeDestino.value]);
   }
 
   valorOrigem?.addEventListener('input', converter);
@@ -170,11 +131,9 @@ import Layout from '../layouts/Layout.astro';
   unidadeDestino?.addEventListener('change', converter);
 
   btnInverter?.addEventListener('click', () => {
-    // Troca unidades
-    const tmpUnidade = unidadeOrigem.value;
+    const tmp = unidadeOrigem.value;
     unidadeOrigem.value = unidadeDestino.value;
-    unidadeDestino.value = tmpUnidade;
-    // Mantém o valor digitado e recalcula
+    unidadeDestino.value = tmp;
     converter();
   });
 </script>
