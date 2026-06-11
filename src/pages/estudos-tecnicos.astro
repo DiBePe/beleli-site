@@ -2,258 +2,332 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Estudos Técnicos" description="Demonstração de produção fotogramétrica completa — caracterização florestal por captura aérea autoral na região de Ilha Solteira/SP.">
+<Layout title="Estudos Técnicos" description="Demonstração de produção fotogramétrica completa em cenários complementares — caracterização florestal e margem de reservatório artificial na região de Ilha Solteira/SP.">
 
-  <!-- 1. HERO -->
+  <!-- HERO -->
   <section class="relative bg-azul text-white py-16 overflow-hidden">
     <div class="absolute inset-0">
       <img src="/fotos_aereas_01.jpg" alt="Vista aérea de fragmento florestal" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-azul/60"></div>
     </div>
     <div class="relative max-w-6xl mx-auto px-6">
-      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Estudo Técnico</p>
-      <h1 class="text-3xl md:text-4xl font-semibold">Caracterização Florestal · Reflorestamento e Mata Nativa</h1>
+      <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-sm">Estudos Técnicos</p>
+      <h1 class="text-3xl md:text-4xl font-semibold">Caracterização Aérea Aplicada</h1>
     </div>
   </section>
 
-  <!-- 2. DISCLAIMER -->
+  <!-- DISCLAIMER GERAL -->
   <section class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <p class="text-lg text-cinza leading-relaxed max-w-3xl fade-in-up">
-        Voo piloto interno em fragmento florestal — reflorestamento contíguo a mata nativa com córrego, próximo a loteamento. Executado para validar o pipeline fotogramétrico próprio da Beleli. Os produtos apresentados ilustram a entrega técnica completa que oferecemos em projetos de caracterização florestal, mapeamento aéreo e análise espacial.
+        Voos piloto internos executados em cenários complementares — caracterização florestal de remanescente próximo a loteamento (Estudo 01) e margem de reservatório artificial em UHE de Ilha Solteira (Estudo 02). Conduzidos para validar o pipeline fotogramétrico próprio da Beleli. Os produtos apresentados ilustram a entrega técnica completa que oferecemos em projetos de mapeamento aéreo, análise espacial e caracterização ambiental.
       </p>
     </div>
   </section>
 
-  <!-- 3. CENÁRIO -->
-  <section class="py-16 bg-azul/5">
+  <!-- ============================= -->
+  <!-- ESTUDO 01 — OBRA_01           -->
+  <!-- ============================= -->
+
+  <section class="pt-8 pb-16 bg-azul/5">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Cenário</p>
-      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Fragmento florestal em borda de loteamento</h2>
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div class="space-y-4 text-cinza leading-relaxed fade-in-up">
-          <p>O levantamento cobriu uma área de aproximadamente 7 hectares próxima a Ilha Solteira/SP, na borda de um loteamento em implantação. A cobertura predominante é de plantio jovem em alinhamento característico de compensação ambiental, contíguo a um remanescente de mata nativa que se estende pelas bordas e acompanha um pequeno córrego no interior do polígono. Uma via asfaltada delimita o lado leste — divisa entre a área de compensação e o loteamento. Solo exposto entre as mudas indica plantio em estágio inicial.</p>
-          <p>Esse cenário concentra três condições que costumam exigir bastante de pipelines de fotogrametria: cobertura vegetal densa em parte do polígono (mata nativa nas bordas), feição linear de drenagem (córrego, que altera o relevo no eixo central) e transição abrupta entre usos do solo (plantio, mata, asfalto, solo descoberto). A diversidade de texturas e a geometria irregular do limite tornam o caso útil para validar alinhamento de imagens, qualidade da reconstrução de relevo sob dossel e separação entre superfície (DSM) e terreno (DTM) em áreas com vegetação heterogênea.</p>
+      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Estudo 01</p>
+      <h2 class="text-2xl md:text-3xl font-semibold text-azul mb-12 fade-in-up">Caracterização Florestal · Reflorestamento e Mata Nativa</h2>
+
+      <!-- Cenário 01 -->
+      <div class="mb-16">
+        <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Cenário</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">Fragmento florestal em borda de loteamento</h3>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="space-y-4 text-cinza leading-relaxed fade-in-up">
+            <p>O levantamento cobriu uma área de aproximadamente 7 hectares próxima a Ilha Solteira/SP, na borda de um loteamento em implantação. A cobertura predominante é de plantio jovem em alinhamento característico de compensação ambiental, contíguo a um remanescente de mata nativa que se estende pelas bordas e acompanha um pequeno córrego no interior do polígono. Uma via asfaltada delimita o lado leste — divisa entre a área de compensação e o loteamento. Solo exposto entre as mudas indica plantio em estágio inicial.</p>
+            <p>Esse cenário concentra três condições que costumam exigir bastante de pipelines de fotogrametria: cobertura vegetal densa em parte do polígono (mata nativa nas bordas), feição linear de drenagem (córrego, que altera o relevo no eixo central) e transição abrupta entre usos do solo (plantio, mata, asfalto, solo descoberto). A diversidade de texturas e a geometria irregular do limite tornam o caso útil para validar alinhamento de imagens, qualidade da reconstrução de relevo sob dossel e separação entre superfície (DSM) e terreno (DTM) em áreas com vegetação heterogênea.</p>
+          </div>
+          <figure class="fade-in-up">
+            <img src="/fotos_aereas_02.jpg" alt="Vista de conjunto do fragmento florestal" class="w-full aspect-video object-cover rounded" />
+            <figcaption class="text-xs text-gray-400 mt-2">Captura aérea · DJI Mini 3 · 2026</figcaption>
+          </figure>
         </div>
-        <figure class="fade-in-up">
-          <img src="/fotos_aereas_02.jpg" alt="Vista de conjunto do fragmento florestal" class="w-full aspect-video object-cover rounded" />
-          <figcaption class="text-xs text-gray-400 mt-2">Captura aérea · DJI Mini 3 · 2026</figcaption>
-        </figure>
       </div>
-    </div>
-  </section>
 
-  <!-- 4. CAPTURA -->
-  <section class="py-16 bg-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Captura</p>
-      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Parâmetros de voo e processamento</h2>
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <div class="fade-in-up">
-          <table class="w-full text-sm">
-            <tbody class="divide-y divide-gray-100">
-              <tr>
-                <td class="py-3 text-cinza font-medium">Aeronave</td>
-                <td class="py-3 text-azul">DJI Mini 3</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Data do voo</td>
-                <td class="py-3 text-azul">29 de maio de 2026</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Duração do voo</td>
-                <td class="py-3 text-azul">~30 min</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Número de imagens</td>
-                <td class="py-3 text-azul">140</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Câmeras alinhadas</td>
-                <td class="py-3 text-azul">140 (100%)</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Altura AGL média</td>
-                <td class="py-3 text-azul">≈100 m</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Sobreposição frontal</td>
-                <td class="py-3 text-azul">~80%</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Sobreposição lateral</td>
-                <td class="py-3 text-azul">~70% (estimada)</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Resolução do sensor</td>
-                <td class="py-3 text-azul">4000 × 2250 px (16:9)</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">GSD efetivo</td>
-                <td class="py-3 text-azul">~3,0 cm/pixel</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Cobertura horizontal</td>
-                <td class="py-3 text-azul">~7,2 hectares</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">CRS de processamento</td>
-                <td class="py-3 text-azul">UTM 22S (EPSG:32722)</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Pipeline</td>
-                <td class="py-3 text-azul">OpenDroneMap · CloudCompare · QGIS</td>
-              </tr>
-              <tr>
-                <td class="py-3 text-cinza font-medium">Tempo de processamento</td>
-                <td class="py-3 text-azul">~2 horas</td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Captura 01 -->
+      <div class="mb-16">
+        <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Captura</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">Parâmetros de voo e processamento</h3>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="fade-in-up">
+            <table class="w-full text-sm">
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="py-3 text-cinza font-medium">Aeronave</td><td class="py-3 text-azul">DJI Mini 3</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Data do voo</td><td class="py-3 text-azul">29 de maio de 2026</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Duração do voo</td><td class="py-3 text-azul">~30 min</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Número de imagens</td><td class="py-3 text-azul">140</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Câmeras alinhadas</td><td class="py-3 text-azul">140 (100%)</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Altura AGL média</td><td class="py-3 text-azul">≈100 m</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Sobreposição frontal</td><td class="py-3 text-azul">~80%</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Sobreposição lateral</td><td class="py-3 text-azul">~70% (estimada)</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Resolução do sensor</td><td class="py-3 text-azul">4000 × 2250 px (16:9)</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">GSD efetivo</td><td class="py-3 text-azul">~3,0 cm/pixel</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Cobertura horizontal</td><td class="py-3 text-azul">~7,2 hectares</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">CRS de processamento</td><td class="py-3 text-azul">UTM 22S (EPSG:32722)</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Pipeline</td><td class="py-3 text-azul">OpenDroneMap · CloudCompare · QGIS</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Tempo de processamento</td><td class="py-3 text-azul">~2 horas</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figure class="fade-in-up">
+            <img src="/fotos_aereas_03.jpg" alt="Detalhe do alinhamento de mudas" class="w-full aspect-video object-cover rounded" />
+            <figcaption class="text-xs text-gray-400 mt-2">Captura aérea · DJI Mini 3 · 2026</figcaption>
+          </figure>
         </div>
-        <figure class="fade-in-up">
-          <img src="/fotos_aereas_03.jpg" alt="Detalhe do alinhamento de mudas" class="w-full aspect-video object-cover rounded" />
-          <figcaption class="text-xs text-gray-400 mt-2">Captura aérea · DJI Mini 3 · 2026</figcaption>
-        </figure>
       </div>
-    </div>
-  </section>
 
-  <!-- 5. PRODUTOS GERADOS -->
-  <section class="py-16 bg-azul/5">
-    <div class="max-w-6xl mx-auto px-6">
-      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Produtos gerados</p>
-      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">Entregáveis técnicos</h2>
+      <!-- Produtos gerados 01 -->
+      <div class="mb-16">
+        <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Produtos gerados</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">Entregáveis técnicos</h3>
 
-      <!-- 5.1 Grid técnico: 3 cards principais -->
-      <div class="grid md:grid-cols-3 gap-6 items-start">
-
-        <!-- Card 1: Ortofoto -->
-        <div class="fade-in-up">
-          <button class="thumbnail-trigger w-full text-left" data-img="/ortofoto_web.jpg" data-title="Ortofoto" data-desc="Imagem aérea ortorretificada e georreferenciada em UTM 22S.">
-            <img src="/ortofoto_web.jpg" alt="Ortofoto" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-          </button>
-          <p class="text-azul font-semibold text-sm mt-3">Ortofoto</p>
-          <p class="text-xs text-cinza leading-relaxed mt-1">Imagem aérea ortorretificada e georreferenciada em UTM 22S, com correção das distorções de perspectiva inerentes ao voo. Funciona como base cartográfica para análise espacial, medições de área e localização absoluta de feições do terreno.</p>
-        </div>
-
-        <!-- Card 2: CHM -->
-        <div class="fade-in-up">
-          <button class="thumbnail-trigger w-full text-left" data-img="/chm_web.png" data-title="Modelo de Altura de Copas (CHM)" data-desc="Raster derivado da diferença entre DSM e DTM.">
-            <img src="/chm_web.png" alt="CHM hipsométrico" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-          </button>
-          <p class="text-azul font-semibold text-sm mt-3">Modelo de Altura de Copas (CHM)</p>
-          <p class="text-xs text-cinza leading-relaxed mt-1">Raster derivado da diferença entre o modelo digital de superfície (DSM) e o modelo digital de terreno (DTM). Para cada metro quadrado do polígono, expressa a altura da vegetação acima do solo — métrica direta para caracterizar dossel, comparar com levantamentos anteriores e separar estratos arbóreos.</p>
-        </div>
-
-        <!-- Card 3: Modelo 3D · Nuvem de Pontos Colorizada -->
-        <div class="fade-in-up">
-          <button class="thumbnail-trigger w-full text-left" data-img="/area_3d_perspectiva.png" data-title="Modelo 3D · Perspectiva oblíqua" data-desc="Reconstrução tridimensional por Structure from Motion (SfM) — vista em perspectiva.">
-            <img src="/area_3d_perspectiva.png" alt="Modelo 3D perspectiva" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-          </button>
-          <p class="text-azul font-semibold text-sm mt-3">Modelo 3D · Nuvem de Pontos Colorizada</p>
-          <p class="text-xs text-cinza leading-relaxed mt-1 mb-3">Reconstrução tridimensional gerada por Structure from Motion (SfM) a partir das imagens do voo, com cor real extraída das fotos. Permite visualização tridimensional do terreno e da cobertura vegetal em três ângulos (vista superior, perspectiva oblíqua e perfil lateral), evidenciando relevo, altura do dossel e transições estruturais.</p>
-          <!-- Sub-galeria interna: 2 vistas adicionais -->
-          <div class="grid grid-cols-2 gap-2">
-            <button class="thumbnail-trigger" data-img="/area_3d_topo.png" data-title="Modelo 3D · Vista superior" data-desc="Vista ortogonal superior da nuvem de pontos colorizada.">
-              <img src="/area_3d_topo.png" alt="Modelo 3D topo" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-              <p class="text-xs text-cinza mt-1 text-center">Topo</p>
+        <div class="grid md:grid-cols-3 gap-6 items-start">
+          <div class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/ortofoto_web.jpg" data-title="Ortofoto" data-desc="Imagem aérea ortorretificada e georreferenciada em UTM 22S.">
+              <img src="/ortofoto_web.jpg" alt="Ortofoto" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
             </button>
-            <button class="thumbnail-trigger" data-img="/area_3d_lateral.png" data-title="Modelo 3D · Perfil lateral" data-desc="Perfil lateral da nuvem de pontos colorizada.">
-              <img src="/area_3d_lateral.png" alt="Modelo 3D lateral" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-              <p class="text-xs text-cinza mt-1 text-center">Lateral</p>
+            <p class="text-azul font-semibold text-sm mt-3">Ortofoto</p>
+            <p class="text-xs text-cinza leading-relaxed mt-1">Imagem aérea ortorretificada e georreferenciada em UTM 22S, com correção das distorções de perspectiva inerentes ao voo. Funciona como base cartográfica para análise espacial, medições de área e localização absoluta de feições do terreno.</p>
+          </div>
+
+          <div class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/chm_web.png" data-title="Modelo de Altura de Copas (CHM)" data-desc="Raster derivado da diferença entre DSM e DTM.">
+              <img src="/chm_web.png" alt="CHM hipsométrico" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
             </button>
+            <p class="text-azul font-semibold text-sm mt-3">Modelo de Altura de Copas (CHM)</p>
+            <p class="text-xs text-cinza leading-relaxed mt-1">Raster derivado da diferença entre o modelo digital de superfície (DSM) e o modelo digital de terreno (DTM). Para cada metro quadrado do polígono, expressa a altura da vegetação acima do solo — métrica direta para caracterizar dossel, comparar com levantamentos anteriores e separar estratos arbóreos.</p>
+          </div>
+
+          <div class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/area_3d_perspectiva.png" data-title="Modelo 3D · Perspectiva oblíqua" data-desc="Reconstrução tridimensional por Structure from Motion (SfM) — vista em perspectiva.">
+              <img src="/area_3d_perspectiva.png" alt="Modelo 3D perspectiva" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+            </button>
+            <p class="text-azul font-semibold text-sm mt-3">Modelo 3D · Nuvem de Pontos Colorizada</p>
+            <p class="text-xs text-cinza leading-relaxed mt-1 mb-3">Reconstrução tridimensional gerada por Structure from Motion (SfM) a partir das imagens do voo, com cor real extraída das fotos. Permite visualização tridimensional do terreno e da cobertura vegetal em três ângulos (vista superior, perspectiva oblíqua e perfil lateral), evidenciando relevo, altura do dossel e transições estruturais.</p>
+            <div class="grid grid-cols-2 gap-2">
+              <button class="thumbnail-trigger" data-img="/area_3d_topo.png" data-title="Modelo 3D · Vista superior" data-desc="Vista ortogonal superior da nuvem de pontos colorizada.">
+                <img src="/area_3d_topo.png" alt="Modelo 3D topo" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+                <p class="text-xs text-cinza mt-1 text-center">Topo</p>
+              </button>
+              <button class="thumbnail-trigger" data-img="/area_3d_lateral.png" data-title="Modelo 3D · Perfil lateral" data-desc="Perfil lateral da nuvem de pontos colorizada.">
+                <img src="/area_3d_lateral.png" alt="Modelo 3D lateral" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+                <p class="text-xs text-cinza mt-1 text-center">Lateral</p>
+              </button>
+            </div>
           </div>
         </div>
 
-      </div>
+        <!-- Capturas cinemáticas 01 -->
+        <div class="mt-16 pt-12 border-t border-gray-200">
+          <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Registros visuais</p>
+          <h4 class="text-lg font-semibold text-azul mb-8 fade-in-up">Capturas cinemáticas do voo</h4>
 
-      <!-- 5.2 Separador + sub-título -->
-      <div class="mt-16 pt-12 border-t border-gray-200">
-        <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Registros visuais</p>
-        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">Capturas cinemáticas do voo</h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <figure class="fade-in-up">
+              <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_01.jpg" data-title="Transição mata nativa / plantio" data-desc="Transição entre mata nativa e área de plantio recente; via asfaltada do loteamento ao fundo.">
+                <img src="/fotos_aereas_01.jpg" alt="Transição mata nativa e plantio" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+              </button>
+              <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Transição entre mata nativa e área de plantio recente; via asfaltada do loteamento ao fundo.</figcaption>
+            </figure>
 
-        <!-- 5.3 Galeria visual: 4 fotos em 2x2 -->
-        <div class="grid md:grid-cols-2 gap-6">
+            <figure class="fade-in-up">
+              <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_02.jpg" data-title="Vista de conjunto" data-desc="Plantio em estágio inicial junto à infraestrutura urbana adjacente.">
+                <img src="/fotos_aereas_02.jpg" alt="Vista de conjunto" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+              </button>
+              <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Vista de conjunto: plantio em estágio inicial junto à infraestrutura urbana adjacente.</figcaption>
+            </figure>
 
-          <figure class="fade-in-up">
-            <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_01.jpg" data-title="Transição mata nativa / plantio" data-desc="Transição entre mata nativa e área de plantio recente; via asfaltada do loteamento ao fundo.">
-              <img src="/fotos_aereas_01.jpg" alt="Transição mata nativa e plantio" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-            </button>
-            <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Transição entre mata nativa e área de plantio recente; via asfaltada do loteamento ao fundo.</figcaption>
-          </figure>
+            <figure class="fade-in-up">
+              <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_03.jpg" data-title="Detalhe das mudas em alinhamento" data-desc="Mudas em alinhamento característico de medida compensatória.">
+                <img src="/fotos_aereas_03.jpg" alt="Detalhe das mudas em alinhamento" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+              </button>
+              <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Detalhe técnico das mudas em alinhamento característico de medida compensatória.</figcaption>
+            </figure>
 
-          <figure class="fade-in-up">
-            <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_02.jpg" data-title="Vista de conjunto" data-desc="Plantio em estágio inicial junto à infraestrutura urbana adjacente.">
-              <img src="/fotos_aereas_02.jpg" alt="Vista de conjunto" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-            </button>
-            <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Vista de conjunto: plantio em estágio inicial junto à infraestrutura urbana adjacente.</figcaption>
-          </figure>
-
-          <figure class="fade-in-up">
-            <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_03.jpg" data-title="Detalhe das mudas em alinhamento" data-desc="Mudas em alinhamento característico de medida compensatória.">
-              <img src="/fotos_aereas_03.jpg" alt="Detalhe das mudas em alinhamento" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-            </button>
-            <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Detalhe técnico das mudas em alinhamento característico de medida compensatória.</figcaption>
-          </figure>
-
-          <figure class="fade-in-up">
-            <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_04.jpg" data-title="Vista ampla do polígono" data-desc="Polígono completo com plantio, mata contígua e arruamento.">
-              <img src="/fotos_aereas_04.jpg" alt="Vista ampla do polígono" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
-            </button>
-            <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Vista ampla do polígono com contexto do entorno: plantio, mata contígua e arruamento.</figcaption>
-          </figure>
-
+            <figure class="fade-in-up">
+              <button class="thumbnail-trigger w-full text-left" data-img="/fotos_aereas_04.jpg" data-title="Vista ampla do polígono" data-desc="Polígono completo com plantio, mata contígua e arruamento.">
+                <img src="/fotos_aereas_04.jpg" alt="Vista ampla do polígono" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+              </button>
+              <figcaption class="text-sm text-cinza mt-3 leading-relaxed">Vista ampla do polígono com contexto do entorno: plantio, mata contígua e arruamento.</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
 
-      <p class="text-xs text-gray-400 italic mt-8 max-w-3xl">
-        Clique em qualquer imagem para visualizar em tamanho ampliado.
-      </p>
+      <!-- Leituras possíveis 01 -->
+      <div>
+        <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Leituras possíveis</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">O que esses produtos permitem analisar</h3>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="fade-in-up">
+            <h4 class="text-base font-semibold text-azul mb-3">Altura de copas (CHM)</h4>
+            <p class="text-cinza text-sm leading-relaxed">
+              O CHM expressa, em cada pixel, a métrica vertical entre o terreno e o topo do dossel. Para áreas de compensação ambiental, isso permite comparar com levantamentos anteriores, quando disponíveis, para identificar onde o plantio efetivamente avançou. A leitura também oferece estimativa volumétrica do dossel — proxy útil para priorização de áreas em monitoramento. Não substitui inventário florestal de campo.
+            </p>
+          </div>
+
+          <div class="fade-in-up">
+            <h4 class="text-base font-semibold text-azul mb-3">Cobertura de copas</h4>
+            <p class="text-cinza text-sm leading-relaxed">
+              Sem câmera multiespectral, a cobertura de copas é estimada por proxy de brilho/verde sobre a ortofoto e por threshold de altura mínima no CHM (excluindo solo e vegetação rasteira). O resultado é uma densidade percentual de cobertura por polígono — útil para Plano de Recuperação de Áreas Degradadas e Alteradas (PRADA), relatórios de monitoramento e comprovação documental ao órgão licenciador. A limitação espectral é declarada explicitamente nos laudos: o valor é proxy, não índice de vegetação normalizado (NDVI).
+            </p>
+          </div>
+
+          <div class="fade-in-up">
+            <h4 class="text-base font-semibold text-azul mb-3">Densidade arbórea</h4>
+            <p class="text-cinza text-sm leading-relaxed">
+              A partir da nuvem de pontos colorizada e do CHM, é possível identificar indivíduos arbóreos por agrupamento local de pontos elevados (algoritmo de detecção de copas por máximos locais). O resultado é uma contagem aproximada de indivíduos por hectare — insumo direto para comprovação do quantitativo plantado em Termos de Ajustamento de Conduta (TAC) ambientais e para auditoria de cumprimento de compromissos de plantio. A precisão da contagem varia com o estágio do plantio: copas individualizadas em adultos são contadas com confiabilidade alta; em mudas jovens com copas sobrepostas, o resultado se aproxima de estimativa.
+            </p>
+          </div>
+
+          <div class="fade-in-up">
+            <h4 class="text-base font-semibold text-azul mb-3">Delimitação plantio vs. mata nativa</h4>
+            <p class="text-cinza text-sm leading-relaxed">
+              A análise combinada da ortofoto (padrão visual de alinhamento) e do CHM (distribuição estatística de alturas) permite separar a porção plantada da porção de remanescente nativo contíguo. O plantio é identificado pela regularidade estrutural — espaçamento entre indivíduos compatível com manejo — e pela altura mais homogênea. A mata nativa contígua é identificada pela heterogeneidade de altura e pela ausência de alinhamento. A delimitação resultante alimenta cadastros como o CAR (Cadastro Ambiental Rural), informa o desenho de Áreas de Preservação Permanente (APP) e dá suporte a relatórios de monitoramento periódico.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 6. LEITURAS POSSÍVEIS -->
-  <section class="py-16 bg-white">
+  <!-- ============================= -->
+  <!-- ESTUDO 02 — OBRA_02           -->
+  <!-- ============================= -->
+
+  <section class="pt-8 pb-16 bg-white border-t border-gray-100">
     <div class="max-w-6xl mx-auto px-6">
-      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Leituras possíveis</p>
-      <h2 class="text-2xl font-semibold text-azul mb-8 fade-in-up">O que esses produtos permitem analisar</h2>
+      <p class="text-terracota text-sm font-semibold uppercase tracking-widest mb-2 fade-in-up">Estudo 02</p>
+      <h2 class="text-2xl md:text-3xl font-semibold text-azul mb-12 fade-in-up">Margem de Reservatório · UHE Ilha Solteira</h2>
 
-      <div class="grid md:grid-cols-2 gap-8">
+      <!-- Cenário 02 -->
+      <div class="mb-16">
+        <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Cenário</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">Faixa de deplecionamento e vegetação ripária</h3>
+        <div class="max-w-4xl space-y-4 text-cinza leading-relaxed fade-in-up">
+          <p>Margem da península de um reservatório de regularização da UHE de Ilha Solteira (SP), no limite entre a lâmina d'água do reservatório e a vegetação ripária remanescente. A faixa exposta nesta data — terracota viva entre a borda da água e a vegetação — é o registro visível da oscilação do nível operacional do reservatório: a porção do terreno que está sob a coluna d'água em períodos de cota cheia e fica descoberta em períodos de cota baixa.</p>
+          <p>Tecnicamente, essa zona de transição entre cota cheia e cota baixa de operação é o que se chama <strong>faixa de deplecionamento</strong>. A área constitui APP nos termos do <em>art. 4º, inciso III, da Lei 12.651/2012</em>, que define como Área de Preservação Permanente o entorno dos reservatórios d'água artificiais, decorrentes de barramento ou represamento de cursos d'água naturais, na faixa definida na licença ambiental do empreendimento. A própria lei não fixa metragem para esse caso: a largura da APP é estabelecida no licenciamento ambiental, observado, quando aplicável, o disposto no <em>art. 62</em> para reservatórios destinados a geração de energia ou abastecimento público anteriores à MP 2.166-67/2001. A caracterização precisa do limite real exposto e da sua relação espacial com a vegetação ripária remanescente é insumo direto para diagnósticos de conformidade ambiental, projetos de recomposição (PRADA) e auditorias técnicas em zonas reguladas.</p>
+          <p>O levantamento aéreo apresentado nesta página é uma fotografia da margem no dia 06 de junho de 2026 — não uma reconstrução da faixa operacional total do reservatório, que depende da variação histórica de cota da UHE. O que está mapeado aqui é a porção exposta naquele dia, com a precisão métrica que a fotogrametria a 100 m AGL permite.</p>
+        </div>
+      </div>
 
-        <div class="fade-in-up">
-          <h3 class="text-lg font-semibold text-azul mb-3">Altura de copas (CHM)</h3>
-          <p class="text-cinza text-sm leading-relaxed">
-            O CHM expressa, em cada pixel, a métrica vertical entre o terreno e o topo do dossel. Para áreas de compensação ambiental, isso permite comparar com levantamentos anteriores, quando disponíveis, para identificar onde o plantio efetivamente avançou. A leitura também oferece estimativa volumétrica do dossel — proxy útil para priorização de áreas em monitoramento. Não substitui inventário florestal de campo.
+      <!-- Captura 02 -->
+      <div class="mb-16">
+        <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Captura</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">Parâmetros de voo e processamento</h3>
+        <div class="space-y-8 fade-in-up">
+          <p class="text-cinza text-sm leading-relaxed max-w-4xl">
+            Levantamento aéreo executado em 06/06/2026 sobre a margem da península, com plano de voo configurado para maximizar a cobertura da interface terra-água. Os 9 % de fotos descartadas (12 de 138) correspondem ao comportamento esperado em voo sobre lâmina d'água — a baixa textura da superfície líquida e o reflexo especular impedem a correspondência de pontos no algoritmo SfM. As 126 imagens válidas foram suficientes para reconstruir a ortofoto, o modelo digital de terreno e o modelo 3D texturizado da península inteira.
+          </p>
+
+          <div class="max-w-3xl">
+            <table class="w-full text-sm">
+              <tbody class="divide-y divide-gray-100">
+                <tr><td class="py-3 text-cinza font-medium">Plataforma</td><td class="py-3 text-azul">DJI Mini 3</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Imagens capturadas</td><td class="py-3 text-azul">138</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Imagens alinhadas no processamento</td><td class="py-3 text-azul">126 (91 %)</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Altura média de voo</td><td class="py-3 text-azul">≈100 m AGL</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">GSD (resolução espacial real)</td><td class="py-3 text-azul">2,70 cm/px</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Sistema de referência</td><td class="py-3 text-azul">UTM 22S — EPSG:32722</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Software de processamento</td><td class="py-3 text-azul">OpenDroneMap</td></tr>
+                <tr><td class="py-3 text-cinza font-medium">Modelo digital</td><td class="py-3 text-azul">DTM (sem pontos de controle terrestres)</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="text-cinza text-sm leading-relaxed max-w-4xl">
+            <strong class="text-azul">Sobre os valores de elevação no perfil topográfico:</strong> o gráfico do perfil topográfico transversal apresentado nesta página expressa cotas relativas ao referencial do voo, não cotas absolutas em SAD2000 ou SIRGAS. Reconstruir cotas absolutas exigiria pontos de controle terrestres (GCPs), que não fizeram parte do escopo desta captura. O que o perfil mede com precisão métrica é o gradiente da margem — a forma da descida do topo da península até a lâmina d'água — não a altimetria absoluta de cada ponto.
           </p>
         </div>
+      </div>
 
-        <div class="fade-in-up">
-          <h3 class="text-lg font-semibold text-azul mb-3">Cobertura de copas</h3>
-          <p class="text-cinza text-sm leading-relaxed">
-            Sem câmera multiespectral, a cobertura de copas é estimada por proxy de brilho/verde sobre a ortofoto e por threshold de altura mínima no CHM (excluindo solo e vegetação rasteira). O resultado é uma densidade percentual de cobertura por polígono — útil para Plano de Recuperação de Áreas Degradadas e Alteradas (PRADA), relatórios de monitoramento e comprovação documental ao órgão licenciador. A limitação espectral é declarada explicitamente nos laudos: o valor é proxy, não índice de vegetação normalizado (NDVI).
-          </p>
+      <!-- Peças 02 -->
+      <div class="mb-16">
+        <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Peças geradas</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">Entregáveis técnicos</h3>
+
+        <div class="grid md:grid-cols-2 gap-6 items-start">
+          <div class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/faixa_deplecionamento.jpg" data-title="Mapa da faixa de deplecionamento" data-desc="Contorno métrico da faixa exposta na margem do reservatório no dia 06/06/2026, georreferenciado em UTM 22S.">
+              <img src="/faixa_deplecionamento.jpg" alt="Mapa da faixa de deplecionamento" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+            </button>
+            <p class="text-azul font-semibold text-sm mt-3">Mapa da faixa de deplecionamento</p>
+            <p class="text-xs text-cinza leading-relaxed mt-1">Contorno métrico da faixa exposta na margem do reservatório no dia 06/06/2026, derivado da ortofoto a 2,70 cm/px e georreferenciado em UTM 22S. Insumo direto para delimitação cartográfica de APP marginal, projetos de recomposição (PRADA) e cadastro ambiental.</p>
+          </div>
+
+          <div class="fade-in-up">
+            <button class="thumbnail-trigger w-full text-left" data-img="/perfil_topografico.jpg" data-title="Perfil topográfico transversal" data-desc="Gradiente da margem entre o topo da península e a lâmina d'água. Cotas relativas (não absolutas).">
+              <img src="/perfil_topografico.jpg" alt="Perfil topográfico transversal" class="w-full aspect-video object-cover rounded hover:opacity-90 transition-opacity" />
+            </button>
+            <p class="text-azul font-semibold text-sm mt-3">Perfil topográfico transversal</p>
+            <p class="text-xs text-cinza leading-relaxed mt-1">Seção transversal mostrando o gradiente da margem entre o topo da península e a lâmina d'água. Expressa cotas relativas ao referencial do voo — a medição precisa é da forma da descida, não da altimetria absoluta.</p>
+          </div>
         </div>
 
-        <div class="fade-in-up">
-          <h3 class="text-lg font-semibold text-azul mb-3">Densidade arbórea</h3>
-          <p class="text-cinza text-sm leading-relaxed">
-            A partir da nuvem de pontos colorizada e do CHM, é possível identificar indivíduos arbóreos por agrupamento local de pontos elevados (algoritmo de detecção de copas por máximos locais). O resultado é uma contagem aproximada de indivíduos por hectare — insumo direto para comprovação do quantitativo plantado em Termos de Ajustamento de Conduta (TAC) ambientais e para auditoria de cumprimento de compromissos de plantio. A precisão da contagem varia com o estágio do plantio: copas individualizadas em adultos são contadas com confiabilidade alta; em mudas jovens com copas sobrepostas, o resultado se aproxima de estimativa.
+        <p class="text-xs text-gray-400 italic mt-8 max-w-3xl">
+          Clique em qualquer imagem para visualizar em tamanho ampliado.
+        </p>
+      </div>
+
+      <!-- Leituras possíveis 02 -->
+      <div>
+        <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2 fade-in-up">Leituras possíveis</p>
+        <h3 class="text-xl font-semibold text-azul mb-8 fade-in-up">O que esses produtos permitem analisar</h3>
+
+        <div class="space-y-8 max-w-4xl">
+          <p class="text-cinza text-sm leading-relaxed fade-in-up">
+            A faixa de deplecionamento mapeada nesta data ocupa <strong>0,24 ha (2.367 m²)</strong> do segmento da margem coberto pelo voo. Trata-se do registro de um trecho específico — um elemento contínuo, relevante ao longo da borda do reservatório, cuja caracterização sistemática depende de levantamentos adicionais ao longo do perímetro.
+          </p>
+
+          <p class="text-cinza text-sm leading-relaxed fade-in-up">
+            A combinação <strong>mapa da faixa + perfil topográfico transversal</strong> oferece três leituras técnicas. A principal é a caracterização regulatória; as outras duas são aplicações secundárias da mesma base de dados.
+          </p>
+
+          <!-- Leitura principal -->
+          <div class="bg-azul/5 border-l-4 border-terracota rounded p-6 fade-in-up">
+            <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-2">Leitura principal</p>
+            <h4 class="text-lg font-semibold text-azul mb-3">Caracterização de APP de reservatório artificial</h4>
+            <p class="text-cinza text-sm leading-relaxed">
+              O contorno da faixa exposta é a referência geométrica a partir da qual a APP marginal — nos termos já citados da Lei 12.651/2012 — pode ser delimitada com precisão métrica em projetos de recomposição (PRADA), cadastro ambiental rural (CAR) ou pareceres de conformidade. É o uso direto da captura: substituir o contorno aproximado por imagem de satélite, comum em peças de instrução, por um contorno medido a 2,70 cm/px.
+            </p>
+          </div>
+
+          <!-- Leituras secundárias -->
+          <div class="fade-in-up">
+            <p class="text-terracota text-xs font-semibold uppercase tracking-widest mb-4">Leituras secundárias</p>
+            <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-base font-semibold text-azul mb-3">Comparação com levantamentos futuros</h4>
+                <p class="text-cinza text-sm leading-relaxed">
+                  Esta caracterização é um marco temporal — uma medição precisa da margem no dia 06/06/2026. A repetição do voo em datas posteriores, com a mesma metodologia, permite comparar a evolução da margem entre datas e estimar a variação da cota operacional do reservatório a partir de evidência geomorfológica direta, sem depender exclusivamente de dados operacionais da UHE.
+                </p>
+              </div>
+              <div>
+                <h4 class="text-base font-semibold text-azul mb-3">Subsídio para projetos de revegetação de margem</h4>
+                <p class="text-cinza text-sm leading-relaxed">
+                  O perfil topográfico mostra com precisão o gradiente entre a vegetação ripária remanescente e a faixa exposta, informando o desenho de plantios de margem que respeitem a hidrodinâmica local (espécies, densidade, posição relativa à cota máxima de inundação).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nota final -->
+          <p class="text-cinza text-sm leading-relaxed italic border-l-2 border-gray-200 pl-4 fade-in-up">
+            A reconstrução fotogramétrica não substitui o levantamento planialtimétrico convencional para finalidades cartoriais ou de outorga. É adequada a diagnóstico e caracterização ambiental, não a finalidades que exijam precisão planialtimétrica certificada.
           </p>
         </div>
-
-        <div class="fade-in-up">
-          <h3 class="text-lg font-semibold text-azul mb-3">Delimitação plantio vs. mata nativa</h3>
-          <p class="text-cinza text-sm leading-relaxed">
-            A análise combinada da ortofoto (padrão visual de alinhamento) e do CHM (distribuição estatística de alturas) permite separar a porção plantada da porção de remanescente nativo contíguo. O plantio é identificado pela regularidade estrutural — espaçamento entre indivíduos compatível com manejo — e pela altura mais homogênea. A mata nativa contígua é identificada pela heterogeneidade de altura e pela ausência de alinhamento. A delimitação resultante alimenta cadastros como o CAR (Cadastro Ambiental Rural), informa o desenho de Áreas de Preservação Permanente (APP) e dá suporte a relatórios de monitoramento periódico.
-          </p>
-        </div>
-
       </div>
     </div>
   </section>
 
-  <!-- 7. CTA -->
+  <!-- CTA -->
   <section class="bg-azul/5 py-16">
     <div class="max-w-6xl mx-auto px-6 text-center">
       <h2 class="text-2xl font-semibold text-azul mb-4">Quer mapeamento aéreo técnico para seu projeto?</h2>
