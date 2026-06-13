@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://beleligeoengenharia.com.br",
+  site: "https://www.beleligeoengenharia.com.br",
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
