@@ -37,6 +37,14 @@ const fullTitle = `${title} — Beleli GeoEngenharia`;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Google Analytics 4 (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-CWCGCECMWH"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CWCGCECMWH');
+    </script>
   </head>
 
   <body class="min-h-screen flex flex-col">
