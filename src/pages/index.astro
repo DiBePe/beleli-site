@@ -3,7 +3,9 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Início">
- <section class="relative bg-azul text-white py-24 overflow-hidden">
+
+  <!-- HERO -->
+  <section class="relative bg-azul text-white py-24 overflow-hidden">
     <div class="absolute inset-0">
       <img src="/galeria_interface_terra_agua.jpg" alt="Vista aérea da península de Ilha Solteira — interface entre vegetação ripária e reservatório artificial" class="w-full h-full object-cover" />
       <div class="absolute inset-0 bg-azul/60"></div>
@@ -22,22 +24,71 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- BLOCO SST PROEMINENTE -->
+  <section class="bg-azul/5 py-12 md:py-16 border-b border-azul/10">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-[auto_1fr_auto] gap-8 items-center">
+
+        <!-- Ícone -->
+        <div class="text-terracota">
+          <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2l8 3v6c0 5-3.5 9.5-8 11-4.5-1.5-8-6-8-11V5l8-3z"/>
+            <path d="M9 12l2 2 4-4"/>
+          </svg>
+        </div>
+
+        <!-- Texto -->
+        <div>
+          <p class="text-terracota font-medium mb-2 uppercase tracking-widest text-xs">Segurança do Trabalho · eSocial</p>
+          <h2 class="text-2xl md:text-3xl font-semibold text-azul mb-3 leading-tight">
+            Segurança do Trabalho com ART de engenheira
+          </h2>
+          <p class="text-cinza leading-relaxed max-w-2xl">
+            Tem funcionário? O eSocial exige PGR, PCMSO e LTCAT. A Beleli resolve — e ainda cuida do ambiental no mesmo CNPJ.
+          </p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col gap-3 md:items-end">
+          <a href="https://wa.me/5518997116392" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 bg-terracota hover:bg-terracota/90 text-white font-medium px-6 py-3 rounded transition-colors whitespace-nowrap">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.498 14.382c-.301-.15-1.767-.867-2.04-.966-.273-.101-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.174-.3-.019-.465.13-.615.136-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.075-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.51-.172-.015-.371-.015-.571-.015-.2 0-.523.074-.797.359-.273.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.091 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.345m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a9.869 9.869 0 0 1-1.516-5.26c0-5.445 4.455-9.885 9.942-9.885 2.654 0 5.145 1.035 7.021 2.91 1.875 1.886 2.909 4.371 2.909 7.026-.004 5.444-4.46 9.885-9.935 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.893c0 2.096.549 4.142 1.595 5.945L0 24l6.335-1.652a12.062 12.062 0 0 0 5.71 1.447h.006c6.585 0 11.946-5.336 11.949-11.896 0-3.176-1.24-6.165-3.495-8.411"/>
+            </svg>
+            Falar no WhatsApp
+          </a>
+          <a href="/seguranca-do-trabalho" class="text-azul hover:text-terracota font-medium text-sm transition-colors text-center md:text-right">
+            Saiba mais →
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- O QUE FAZEMOS - 4 cards em grid 2x2 -->
   <section class="relative py-20 bg-white">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-2xl font-semibold text-azul mb-12">O que fazemos</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 gap-8">
 
-        <div class="border-t-2 border-terracota pt-6 fade-in-up">
-          <h3 class="font-semibold text-lg text-azul mb-3">Compliance Industrial Integrado</h3>
+        <a href="/seguranca-do-trabalho" class="border-t-2 border-terracota pt-6 fade-in-up block group">
+          <h3 class="font-semibold text-lg text-azul mb-3 group-hover:text-terracota transition-colors">Segurança do Trabalho</h3>
           <p class="text-cinza text-sm leading-relaxed">
-            Sistemas de gestão integrados (ISO 9001, 14001, 45001), documentação legal de SST e ambiental, monitoramento com IoT e dashboards de indicadores QSMS.
+            PGR (NR-1), PCMSO (NR-7), LTCAT, PPP e laudos de insalubridade (NR-15) e periculosidade (NR-16) com ART de engenheira registrada no CREA-SP. Atendimento ao eSocial (S-2240).
           </p>
-        </div>
+        </a>
 
         <div class="border-t-2 border-terracota pt-6 fade-in-up">
           <h3 class="font-semibold text-lg text-azul mb-3">Serviços Geoambientais</h3>
           <p class="text-cinza text-sm leading-relaxed">
             Licenciamento ambiental, perícia e auditoria, mapeamento com drone, ortofotos, análise espacial em GIS e estudos de recursos hídricos e outorga.
+          </p>
+        </div>
+
+        <div class="border-t-2 border-terracota pt-6 fade-in-up">
+          <h3 class="font-semibold text-lg text-azul mb-3">Compliance Industrial Integrado</h3>
+          <p class="text-cinza text-sm leading-relaxed">
+            Sistemas de gestão integrados (ISO 9001, 14001, 45001), documentação legal de SST e ambiental, monitoramento com IoT e dashboards de indicadores QSMS.
           </p>
         </div>
 
@@ -51,4 +102,5 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
 </Layout>
